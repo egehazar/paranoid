@@ -1,5 +1,5 @@
 # Phase 3 — live plugin install verification
-# Project: /c/Users/egeha/OneDrive/Masaüstü/paranoid-live-demo   (root IS the demo app, as Phase 3 requires)
+# Project: <live-demo>   (root IS the demo app, as Phase 3 requires)
 # Install: plugin flow — 'claude plugin install paranoid@paranoid --scope local'
 # ===============================================================
 

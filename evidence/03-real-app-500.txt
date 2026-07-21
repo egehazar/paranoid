@@ -1,5 +1,5 @@
 # Command: node scripts/check-live-app.mjs
-# CWD:     /c/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app
+# CWD:     <repo>/fixtures/demo-app
 # Thesis:  the REAL app returns 500 — db.mjs sends snake_case, the
 #          feature reads camelCase. Same code the green test never hit.
 # ---------------------------------------------------------------

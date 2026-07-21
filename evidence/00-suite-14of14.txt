@@ -1,5 +1,5 @@
 # Command: npm test
-# CWD:     /c/Users/egeha/OneDrive/Masaüstü/paranoid
+# CWD:     <repo>
 # Node:    v24.14.0
 # Date:    (captured live; no fabrication)
 # ---------------------------------------------------------------

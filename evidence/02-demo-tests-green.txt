@@ -1,5 +1,5 @@
 # Command: node --test
-# CWD:     /c/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app
+# CWD:     <repo>/fixtures/demo-app
 # Thesis:  the agent's own unit test is GREEN (it mocks camelCase).
 # ---------------------------------------------------------------
 

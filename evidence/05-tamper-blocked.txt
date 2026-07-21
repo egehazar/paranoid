@@ -2,7 +2,7 @@
 # Scenario: temp git repo; smoke.mjs is a committed, protected reality check.
 #           It was then edited WITHOUT committing (simulating the agent
 #           tampering with the check it is not allowed to own).
-# cwd JSON: {"cwd":"C:/Users/egeha/AppData/Local/Temp/claude/C--Users-egeha/5d2e3682-957b-4c4e-9c0e-28b95fc105cc/scratchpad/paranoid-tamper-demo"}
+# cwd JSON: {"cwd":"<tmp>/paranoid-tamper-demo"}
 # Expected: tamper block (uncommitted change to a protected path) + exit 2
 # ---------------------------------------------------------------
 

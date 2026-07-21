@@ -1,6 +1,6 @@
 # Command: printf '{"cwd":"<abs>","stop_hook_active":true}' | node ../../scripts/paranoid-stop.mjs
-# cwd JSON: {"cwd":"C:/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app","stop_hook_active":true}
-# CWD:      /c/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app
+# cwd JSON: {"cwd":"<repo>/fixtures/demo-app","stop_hook_active":true}
+# CWD:      <repo>/fixtures/demo-app
 # Expected: STILL blocks on a continuation stop + exit 2
 #           (hook re-runs the check instead of exiting early)
 # ---------------------------------------------------------------

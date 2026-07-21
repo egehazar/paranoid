@@ -1,6 +1,6 @@
 # Command: printf '{"cwd":"<abs>"}' | node ../../scripts/paranoid-stop.mjs
-# cwd JSON: {"cwd":"C:/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app"}
-# CWD:      /c/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app
+# cwd JSON: {"cwd":"<repo>/fixtures/demo-app"}
+# CWD:      <repo>/fixtures/demo-app
 # Env:      CLAUDE_PROJECT_DIR unset (hook falls back to piped cwd)
 # Expected: PARANOID block report + exit 2
 # ---------------------------------------------------------------
