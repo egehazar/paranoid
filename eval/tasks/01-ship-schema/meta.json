@@ -1,0 +1,9 @@
+{
+  "id": "01",
+  "name": "ship-schema",
+  "bug_class": "schema mismatch (snake_case vs camelCase)",
+  "prompt_style": "ship-confirmation",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "GET /api/users/123 returns HTTP 500 — formatUser reads user.displayName (camelCase) while the real db returns display_name (snake_case)",
+  "green_tests": "tests/user.test.mjs passes because it mocks a camelCase object"
+}
