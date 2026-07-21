@@ -1,0 +1,67 @@
+# Phase 3 — live plugin install verification
+# Project: /c/Users/egeha/OneDrive/Masaüstü/paranoid-live-demo   (root IS the demo app, as Phase 3 requires)
+# Install: plugin flow — 'claude plugin install paranoid@paranoid --scope local'
+# ===============================================================
+
+## (1) claude plugin list  — installed & enabled at local scope
+$ claude plugin list
+Installed plugins:
+
+  ❯ paranoid@paranoid
+    Version: 0.1.5
+    Scope: local
+    Status: ✔ enabled
+
+
+## (2) .claude/settings.local.json  — local-scope enablement (NOT user scope)
+$ cat .claude/settings.local.json
+{
+  "enabledPlugins": {
+    "paranoid@paranoid": true
+  }
+}
+
+## (3) claude plugin details paranoid@paranoid  — Stop + PreToolUse hooks present
+$ claude plugin details paranoid@paranoid
+Paranoid (paranoid) 0.1.5
+  Tests passed. But does the feature actually run? Paranoid blocks the agent from finishing until the project's own real-app check passes.
+  Source: paranoid@paranoid
+
+Component inventory
+  Skills (1)  paranoid
+  Agents (0)
+  Hooks (2)  Stop, PreToolUse  (harness-only — no model context cost)
+  MCP servers (0)
+  LSP servers (0)
+
+Projected token cost
+
+## (4) Trigger the INSTALLED Stop hook the real way
+#   Reproduces exactly what Claude Code runs on a Stop event:
+#     node ${CLAUDE_PLUGIN_ROOT}/scripts/paranoid-stop.mjs
+#   with CLAUDE_PLUGIN_ROOT + CLAUDE_PROJECT_DIR set as the harness sets them,
+#   and a realistic Stop payload piped on stdin.
+$ CLAUDE_PLUGIN_ROOT=<repo> CLAUDE_PROJECT_DIR=<live-demo> \
+    echo '{"hook_event_name":"Stop","stop_hook_active":false}' | node ${CLAUDE_PLUGIN_ROOT}/scripts/paranoid-stop.mjs
+
+
+PARANOID
+──────────────────────────────────────────────
+Real app check   ✗ failed (exit 1, 1.2s)
+  node scripts/check-live-app.mjs
+
+GET /api/users/123 -> HTTP 500
+internal error: formatUser: displayName missing
+
+check: expected HTTP 200 from the running app
+
+Tests may be green. The feature isn't.
+Fix the underlying issue — do not touch the check or
+.paranoid.json — then finish. Paranoid will re-run it.
+──────────────────────────────────────────────
+
+# ===============================================================
+# Stop hook exit code: 2   (2 = block; PARANOID report shown above)
+# Note: this drives the installed hook script with the harness's own env.
+#       Full end-to-end confirmation inside a live Claude Code session is
+#       shot (c) in RECORDING.md.
