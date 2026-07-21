@@ -1,5 +1,6 @@
 {
   "name": "paranoid",
+  "description": "Marketplace for Paranoid — a Claude Code plugin that blocks an agent from finishing until the project's own real-app check passes.",
   "owner": {
     "name": "Ege"
   },

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5
+- Added a top-level `description` to the marketplace manifest so
+  `claude plugin validate . --strict` passes cleanly. The runtime tolerates the
+  missing field, but `--strict` (used in CI) treats it as an error. No script,
+  skill, hook, or demo-app behavior changed.
+- Bumped the version to 0.1.5 in `package.json` and
+  `.claude-plugin/plugin.json`.
+
 ## 0.1.4
 - CI test script now names the test file explicitly (`node --test
   tests/hooks.test.mjs`): npm scripts on Windows run under cmd.exe, which does

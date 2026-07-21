@@ -1,7 +1,7 @@
 {
   "name": "paranoid",
   "description": "Tests passed. But does the feature actually run? Paranoid blocks the agent from finishing until the project's own real-app check passes.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": {
     "name": "Ege"
   },
