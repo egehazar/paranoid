@@ -1,9 +1,18 @@
+<p align="center">
+  <img src="assets/hero.svg" alt="Paranoid — tests passed, but does the feature actually run?" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://github.com/egehazar/paranoid/actions/workflows/test.yml"><img src="https://github.com/egehazar/paranoid/actions/workflows/test.yml/badge.svg" alt="test"></a>
+  <a href="https://github.com/egehazar/paranoid/actions/workflows/demo-thesis.yml"><img src="https://github.com/egehazar/paranoid/actions/workflows/demo-thesis.yml/badge.svg" alt="demo-thesis"></a>
+  <img src="https://img.shields.io/badge/Claude%20Code-plugin-f7b733?logo=anthropic&logoColor=white" alt="Claude Code plugin">
+  <img src="https://img.shields.io/badge/deps-zero-3fb950" alt="zero dependencies">
+  <img src="https://img.shields.io/badge/license-MIT-2f81f7" alt="MIT license">
+</p>
+
 # Paranoid
 
 **Tests passed. But does the feature actually run? Paranoid checks.**
-
-[![test](https://github.com/egehazar/paranoid/actions/workflows/test.yml/badge.svg)](https://github.com/egehazar/paranoid/actions/workflows/test.yml)
-[![demo-thesis](https://github.com/egehazar/paranoid/actions/workflows/demo-thesis.yml/badge.svg)](https://github.com/egehazar/paranoid/actions/workflows/demo-thesis.yml)
 
 Your coding agent wrote the feature. It wrote the tests. Every test passed.
 Then you opened the app — and the feature was still broken.
@@ -27,6 +36,15 @@ Fix the underlying issue — do not touch the check or
 ```
 
 ## How it works
+
+```mermaid
+flowchart LR
+    A["🤖 Agent finishes<br/>its turn"] --> B{"Paranoid Stop hook<br/>runs your .paranoid.json check"}
+    B -->|"✓ real app passes"| C["✅ Agent is allowed<br/>to finish"]
+    B -->|"✗ real app fails"| D["🛑 PARANOID blocks<br/>real error sent back to the agent"]
+    D --> E["Agent keeps working<br/>on the actual bug"]
+    E --> A
+```
 
 1. **You define one real-app check** in `.paranoid.json`:
 
