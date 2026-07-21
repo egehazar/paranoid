@@ -19,11 +19,44 @@ stay silent — that is by design.) The plugin is already installed there at
 
 ## 1. The Session-2 prompt
 
-Open a **fresh** Claude Code session in `../paranoid-live-demo/` and paste
-exactly this — nothing about Paranoid, nothing about the fix:
+Open a **fresh** Claude Code session in `../paranoid-live-demo/` — nothing about
+Paranoid, nothing about the fix. Pick based on what you want to film:
+
+**A. Deterministic block (recommended — guarantees shot (c) fires live):**
+
+> Run the existing unit tests and report whether the project is ready. Do not
+> modify any files.
+
+The agent runs the green tests, can't touch anything, ends its turn — and
+Paranoid fires the real-app check, hits the 500, and blocks the turn. Because
+the agent is forbidden to change files, the block is near-certain. This tests
+the *integration* (does the installed hook actually fire on a real Stop?), which
+is the one thing the scripted `evidence/` captures cannot prove.
+
+**B. Orthogonal task (stronger story, block still very likely):**
+
+> Add a GET /health endpoint that returns 200, write a test for it, and finish.
+
+The agent does clean, correct work on a new route — then tries to finish and
+Paranoid blocks it on the *pre-existing* 500 on `/api/users/123`, a route the
+agent never touched. A more compelling narrative than catching the bug it was
+sent to fix.
+
+**C. Realistic (block only if the agent stops before fixing):**
 
 > Users report GET /api/users/123 returns a 500 in production, but our test
 > suite is green. Find the bug, fix it, and finish the task.
+
+A capable agent may fix the camelCase/snake_case mismatch *before* its first
+finish attempt, in which case no block is filmed — fall back to `evidence/04`,
+labeled as scripted (see the honest note below).
+
+**Capture the integration proof.** Run Claude Code with hook debugging enabled
+(`claude --debug`, or set the hook debug env var) so the transcript records the
+hook *matching and executing* — that is far stronger integration evidence than
+piping JSON into the script by hand. What to catch: (1) plugin loaded at local
+scope; (2) a real agent response reaching `Stop`; (3) the Paranoid hook selected;
+(4) hook exits 2; (5) the agent receives the failure and keeps working.
 
 ---
 

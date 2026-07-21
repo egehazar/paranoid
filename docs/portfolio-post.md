@@ -20,19 +20,22 @@ runs against the actual application and passes.
 
 ## The failure class
 
-The demo bug is deliberately mundane, which is the point. The database returns
+The demo reproduces a common failure class: **the unit test supplies one data
+shape while the running application supplies another.** The database returns
 `display_name` (snake_case); the feature reads `user.displayName` (camelCase)
-and throws. The unit test is green because **the agent wrote the test against
-the shape it invented** — it fed `formatUser` a camelCase object it made up,
-never the shape the real `db.mjs` returns.
+and throws. The test is green because it feeds `formatUser` a camelCase object —
+the shape a developer, or an agent, might assume — never the snake_case shape the
+real `db.mjs` returns. (The fixture *demonstrates* this failure mode; it is not a
+claim that a live agent naturally generated this exact test.)
 
-This isn't a strawman. A 2026 MSR study of 1.2 million commits found that
+The motivation is real. A 2026 MSR study of 1.2 million commits found that
 coding-agent test commits added mocks *more* often than non-agent commits (36%
 vs 26%) and warned that mocked tests can be easier to generate while giving
 weaker evidence about real interactions
 ([arXiv:2602.00409](https://arxiv.org/abs/2602.00409), cited in the project
-README). An agent that mocks its own assumptions can be simultaneously
-"fully tested" and wrong. Paranoid targets exactly that gap.
+README). The study supports the motivation — it does not establish that every
+mocked test is wrong. A test that mocks its own assumptions can be simultaneously
+"fully tested" and wrong; Paranoid targets exactly that gap.
 
 ---
 
@@ -110,6 +113,12 @@ Copied from the project's own honesty, not softened:
   feature is correct — a check proves only what it actually exercises. It's a
   guardrail, not a QA department, and not a replacement for integration tests,
   contract tests, code review, or CI.
+- Claude Code's Stop hook fires at the **end of every agent turn**, not only when
+  the agent claims completion. `Stop` is an end-of-turn lifecycle event, not a
+  task-completion signal — so in a repo whose check is failing, Paranoid is
+  stricter than "runs when the agent tries to finish" and can interrupt a
+  progress or clarification turn. Intentional for a v0, but stated plainly rather
+  than hidden. Disable with `PARANOID_DISABLE=1` or fix the check to continue.
 - Claude Code overrides a Stop hook after **eight consecutive blocks** by
   default. Paranoid re-runs the check each continuation but cannot override that
   platform cap (raise it with `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` if a check
@@ -145,6 +154,7 @@ Copied from the project's own honesty, not softened:
 > declaring a task "done" until a developer-owned check passes against the
 > *running* application, closing the "green tests, broken feature" gap.
 > Hardened across four adversarial AI-vs-AI audit rounds; ships a 14/14
-> zero-dependency test suite and passes `claude plugin validate --strict`.
-> Every portfolio claim is backed by a committed, reproducible capture in
-> `evidence/` — the project verifies itself the way it asks agents to.
+> zero-dependency suite and passes `claude plugin validate --strict`. The
+> `evidence/` files are first-party, reproducible command captures with exit
+> codes; the independent check is CI, which re-runs the suite and re-proves the
+> green-tests/broken-app thesis on GitHub's runners every push.

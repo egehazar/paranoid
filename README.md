@@ -2,6 +2,9 @@
 
 **Tests passed. But does the feature actually run? Paranoid checks.**
 
+[![test](https://github.com/egehazar/paranoid/actions/workflows/test.yml/badge.svg)](https://github.com/egehazar/paranoid/actions/workflows/test.yml)
+[![demo-thesis](https://github.com/egehazar/paranoid/actions/workflows/demo-thesis.yml/badge.svg)](https://github.com/egehazar/paranoid/actions/workflows/demo-thesis.yml)
+
 Your coding agent wrote the feature. It wrote the tests. Every test passed.
 Then you opened the app — and the feature was still broken.
 
@@ -138,6 +141,13 @@ replacement for integration tests, contract tests, code review, or CI.
 
 ## Limitations
 
+- Claude Code's Stop hook fires at the **end of every agent turn**, not only
+  when the agent claims a task is complete. In a repository whose check is
+  failing, Paranoid can therefore also run when the agent is asking a clarifying
+  question or giving a progress update. This is intentional — Claude Code exposes
+  `Stop` as an end-of-turn lifecycle event, not a task-completion signal — but it
+  is stricter than "runs when the agent tries to finish." Set `PARANOID_DISABLE=1`
+  or fix the check before continuing unrelated work in that repository.
 - Claude Code overrides a Stop hook after eight consecutive blocks by default.
   Paranoid re-runs the check on each continuation, but it cannot override that
   platform safety cap. If your check legitimately needs more iterations, raise
@@ -172,6 +182,19 @@ Paranoid is intentionally smaller than a testing platform. It asks one question
 at the moment the agent says it is done:
 
 > **The tests passed. Did the feature actually run?**
+
+## Provenance
+
+Paranoid was designed and written by Claude in a chat session, hardened across
+four adversarial audit rounds between two AI models, then executed and natively
+validated (`claude plugin validate . --strict`) via Claude Code. The commit
+history reflects exactly that: an imported audited `v0.1.4`, a native-validation
+fix (`v0.1.5`), and reproducible command captures under `evidence/`. Those
+capture files are first-party (committed by the repo owner) — they are
+reproducible receipts with exit codes, not an independent audit. The independent
+check is CI: GitHub Actions re-runs the full test suite on every push (`test`
+badge above), and a separate `demo-thesis` job re-proves the green-tests /
+broken-app thesis on GitHub's own runners.
 
 ## Development
 

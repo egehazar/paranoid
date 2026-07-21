@@ -1,0 +1,40 @@
+name: demo-thesis
+
+# Publicly re-proves Paranoid's whole premise on GitHub's own runners:
+# the demo app's unit tests are GREEN while the running app is BROKEN (HTTP 500).
+# This turns the first-party evidence/ captures into independent machine proof.
+# If anyone ever "fixes" the intentional demo bug, the live check starts passing
+# and THIS job goes red — the thesis can never silently rot.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  thesis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Unit tests must be GREEN (exit 0)
+        working-directory: fixtures/demo-app
+        run: node --test
+
+      - name: Running app must be BROKEN (exit 1 + "HTTP 500")
+        working-directory: fixtures/demo-app
+        run: |
+          set +e
+          out="$(node scripts/check-live-app.mjs 2>&1)"
+          code=$?
+          echo "$out"
+          echo "---"
+          echo "live-check exit code: $code"
+          if [ "$code" -eq 0 ]; then
+            echo "THESIS BROKEN: the demo app is no longer failing — someone fixed the intentional bug."
+            exit 1
+          fi
+          echo "$out" | grep -q "HTTP 500" || { echo "Expected 'HTTP 500' in the live-check output."; exit 1; }
+          echo "OK: unit tests green, real app returns HTTP 500 — the thesis holds."

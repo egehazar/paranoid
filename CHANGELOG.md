@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased (docs + CI; no plugin behavior change)
+- Added a `demo-thesis` CI workflow so GitHub's runners publicly re-prove the
+  green-tests / broken-app thesis (unit tests exit 0; live check exit 1 with
+  `HTTP 500`). Turns the first-party `evidence/` captures into independent
+  machine proof; goes red if the intentional demo bug is ever fixed. README
+  gains `test` and `demo-thesis` status badges.
+- README: documented that Claude Code's Stop hook fires at the end of **every**
+  agent turn (not only on task completion), and added a Provenance section.
+- Reframed the portfolio post and evidence language: `evidence/` files are
+  first-party reproducible captures with exit codes, not an independent audit;
+  the demo "reproduces a common failure class" rather than proving an agent
+  fabricated a test. No script, skill, hook, or demo-app file changed.
+
 ## 0.1.5
 - Added a top-level `description` to the marketplace manifest so
   `claude plugin validate . --strict` passes cleanly. The runtime tolerates the
