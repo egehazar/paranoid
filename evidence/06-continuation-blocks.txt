@@ -1,0 +1,25 @@
+# Command: printf '{"cwd":"<abs>","stop_hook_active":true}' | node ../../scripts/paranoid-stop.mjs
+# cwd JSON: {"cwd":"C:/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app","stop_hook_active":true}
+# CWD:      /c/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app
+# Expected: STILL blocks on a continuation stop + exit 2
+#           (hook re-runs the check instead of exiting early)
+# ---------------------------------------------------------------
+
+
+PARANOID
+──────────────────────────────────────────────
+Real app check   ✗ failed (exit 1, 1.2s)
+  node scripts/check-live-app.mjs
+
+GET /api/users/123 -> HTTP 500
+internal error: formatUser: displayName missing
+
+check: expected HTTP 200 from the running app
+
+The reality check still fails after the previous block.
+Fix the underlying issue — do not touch the check or
+.paranoid.json — then finish. Paranoid will re-run it.
+──────────────────────────────────────────────
+
+# ---------------------------------------------------------------
+# exit code: 2

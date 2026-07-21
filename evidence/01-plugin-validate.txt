@@ -1,0 +1,12 @@
+# Command: claude plugin validate . --strict   (after 0.1.5 fix)
+# CWD:     /c/Users/egeha/OneDrive/Masaüstü/paranoid
+# claude:  2.1.216 (Claude Code)
+# Note:    initial failing run preserved in 01-plugin-validate-before-fix.txt
+# ---------------------------------------------------------------
+
+Validating marketplace manifest: C:\Users\egeha\OneDrive\Masaüstü\paranoid\.claude-plugin\marketplace.json
+
+✔ Validation passed
+
+# ---------------------------------------------------------------
+# exit code: 0

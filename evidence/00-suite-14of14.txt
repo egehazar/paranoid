@@ -1,0 +1,35 @@
+# Command: npm test
+# CWD:     /c/Users/egeha/OneDrive/Masaüstü/paranoid
+# Node:    v24.14.0
+# Date:    (captured live; no fabrication)
+# ---------------------------------------------------------------
+
+
+> paranoid@0.1.4 test
+> node --test tests/hooks.test.mjs
+
+✔ stays silent when no config exists (42.7296ms)
+✔ blocks a failing check on the first stop (107.9271ms)
+✔ re-runs and blocks a still-failing check on a continuation stop (106.0686ms)
+✔ allows completion when the check passes (109.5686ms)
+✔ uses CLAUDE_PROJECT_DIR even when cwd is a subdirectory (105.992ms)
+✔ rejects direct and npm-script test runners (42.3831ms)
+✔ invalid timeout values block rather than failing open (41.2513ms)
+✔ guard denies protected Edit/Write targets and allows other files (80.4309ms)
+✔ finds config from a subdirectory without CLAUDE_PROJECT_DIR (106.6601ms)
+✔ never crosses a .git boundary into a parent project's config (41.1731ms)
+✔ finds config more than ten directories above cwd (117.6888ms)
+✔ marketplace root plugin source uses the required ./ prefix (0.3435ms)
+✔ rejects a project timeout that can outlive the host hook (42.9936ms)
+✔ Stop hook blocks uncommitted changes to a protected path with spaces (226.4505ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1239.9817
+
+# ---------------------------------------------------------------
+# exit code: 0

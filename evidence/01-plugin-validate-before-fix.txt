@@ -1,0 +1,15 @@
+# Command: claude plugin validate . --strict
+# CWD:     /c/Users/egeha/OneDrive/Masaüstü/paranoid
+# claude:  2.1.216 (Claude Code)
+# ---------------------------------------------------------------
+
+Validating marketplace manifest: C:\Users\egeha\OneDrive\Masaüstü\paranoid\.claude-plugin\marketplace.json
+
+⚠ Found 1 warning:
+
+  ❯ description: No marketplace description provided. Adding a description helps users understand what this marketplace offers
+
+✘ Validation failed (--strict treats warnings as errors)
+
+# ---------------------------------------------------------------
+# exit code: 1

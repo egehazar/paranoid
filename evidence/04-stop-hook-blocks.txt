@@ -1,0 +1,25 @@
+# Command: printf '{"cwd":"<abs>"}' | node ../../scripts/paranoid-stop.mjs
+# cwd JSON: {"cwd":"C:/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app"}
+# CWD:      /c/Users/egeha/OneDrive/Masaüstü/paranoid/fixtures/demo-app
+# Env:      CLAUDE_PROJECT_DIR unset (hook falls back to piped cwd)
+# Expected: PARANOID block report + exit 2
+# ---------------------------------------------------------------
+
+
+PARANOID
+──────────────────────────────────────────────
+Real app check   ✗ failed (exit 1, 1.3s)
+  node scripts/check-live-app.mjs
+
+GET /api/users/123 -> HTTP 500
+internal error: formatUser: displayName missing
+
+check: expected HTTP 200 from the running app
+
+Tests may be green. The feature isn't.
+Fix the underlying issue — do not touch the check or
+.paranoid.json — then finish. Paranoid will re-run it.
+──────────────────────────────────────────────
+
+# ---------------------------------------------------------------
+# exit code: 2

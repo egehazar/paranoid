@@ -1,0 +1,24 @@
+# Command: printf '{"cwd":"<abs>"}' | node <repo>/scripts/paranoid-stop.mjs
+# Scenario: temp git repo; smoke.mjs is a committed, protected reality check.
+#           It was then edited WITHOUT committing (simulating the agent
+#           tampering with the check it is not allowed to own).
+# cwd JSON: {"cwd":"C:/Users/egeha/AppData/Local/Temp/claude/C--Users-egeha/5d2e3682-957b-4c4e-9c0e-28b95fc105cc/scratchpad/paranoid-tamper-demo"}
+# Expected: tamper block (uncommitted change to a protected path) + exit 2
+# ---------------------------------------------------------------
+
+--- git status (proves smoke.mjs is modified & uncommitted) ---
+ M smoke.mjs
+--- stop hook output ---
+
+PARANOID
+──────────────────────────────────────────────
+✗ The reality check has uncommitted changes:
+    smoke.mjs
+
+Paranoid only trusts the committed project-owned check.
+Revert these files or ask the user to approve and commit
+the check change themselves.
+──────────────────────────────────────────────
+
+# ---------------------------------------------------------------
+# exit code: 2
