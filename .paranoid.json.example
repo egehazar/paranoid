@@ -1,0 +1,5 @@
+{
+  "check": "node scripts/check-live-app.mjs",
+  "timeoutSeconds": 120,
+  "protected": ["scripts/check-live-app.mjs"]
+}

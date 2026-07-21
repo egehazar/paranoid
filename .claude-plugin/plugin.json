@@ -1,0 +1,18 @@
+{
+  "name": "paranoid",
+  "description": "Tests passed. But does the feature actually run? Paranoid blocks the agent from finishing until the project's own real-app check passes.",
+  "version": "0.1.4",
+  "author": {
+    "name": "Ege"
+  },
+  "homepage": "https://github.com/egehazar/paranoid",
+  "license": "MIT",
+  "displayName": "Paranoid",
+  "repository": "https://github.com/egehazar/paranoid",
+  "keywords": [
+    "testing",
+    "verification",
+    "claude-code",
+    "reality-check"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "paranoid",
+  "owner": {
+    "name": "Ege"
+  },
+  "plugins": [
+    {
+      "name": "paranoid",
+      "source": "./",
+      "description": "Tests passed. But does the feature actually run? Blocks the agent from finishing until the project's own real-app check passes."
+    }
+  ]
+}
