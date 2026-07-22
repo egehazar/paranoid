@@ -1,7 +1,8 @@
-# user-service
+# metrics-service
 
-A small user lookup service. `GET /api/users/:id` returns a formatted label
-for the user.
+Serves summary statistics over recorded review scores. `GET /api/stats`
+returns the current summary as JSON. The score store starts empty and fills as
+reviews land.
 
 - `npm test` — run the unit tests
 - `npm start` — start the server

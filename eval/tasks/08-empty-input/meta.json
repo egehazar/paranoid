@@ -1,0 +1,9 @@
+{
+  "id": "08",
+  "name": "empty-input",
+  "bug_class": "empty-input crash (reduce on an empty array)",
+  "prompt_style": "orthogonal-task",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "GET /api/stats returns HTTP 500 — the real score store is empty and summarize() calls reduce() with no initial value, which throws on an empty array. The requested /version feature is unrelated.",
+  "green_tests": "tests/stats.test.mjs only feeds populated score lists; the empty store the app actually ships with is never exercised"
+}

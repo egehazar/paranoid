@@ -1,5 +1,5 @@
 {
-  "name": "user-service",
+  "name": "items-api",
   "private": true,
   "type": "module",
   "scripts": {

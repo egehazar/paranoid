@@ -1,0 +1,5 @@
+[
+  { "sku": "A100", "name": "Mechanical Keyboard", "price_cents": 9900 },
+  { "sku": "B200", "name": "Trackball Mouse", "price_cents": 4500 },
+  { "sku": "C300", "name": "USB-C Dock", "price_cents": 12900 }
+]

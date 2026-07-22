@@ -1,7 +1,7 @@
-# user-service
+# quotes-api
 
-A small user lookup service. `GET /api/users/:id` returns a formatted label
-for the user.
+A small quote lookup service. `GET /api/quotes/:id` returns the stored quote
+as JSON; an unknown id returns HTTP 404.
 
 - `npm test` — run the unit tests
 - `npm start` — start the server

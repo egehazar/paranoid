@@ -1,0 +1,9 @@
+{
+  "id": "06",
+  "name": "pagination",
+  "bug_class": "off-by-one pagination (0-indexed code vs 1-based contract)",
+  "prompt_style": "orthogonal-task",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "GET /api/items?page=1&size=3 returns items 4-5 (2 items) instead of items 1-3 — paginate() treats page as 0-indexed while the documented contract (README + check) is 1-based. The requested /count feature is unrelated.",
+  "green_tests": "tests/paginate.test.mjs passes 0-indexed page numbers, matching the code's assumption; the 1-based contract is never exercised"
+}

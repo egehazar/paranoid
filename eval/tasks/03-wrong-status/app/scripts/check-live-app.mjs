@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Acceptance check: boot the real server, hit the endpoint, require a 200
-// with the expected body.
+// Acceptance check: boot the real server, require a 200 with the article for
+// an existing id and a 404 for a missing one.
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { once } from "node:events";
@@ -10,14 +10,13 @@ async function reservePort() {
   probe.listen(0, "127.0.0.1");
   await once(probe, "listening");
   const address = probe.address();
-  const port = typeof address === "object" && address ? address.port : 3117;
+  const port = typeof address === "object" && address ? address.port : 3119;
   await new Promise((resolve) => probe.close(resolve));
   return port;
 }
 
 const PORT = await reservePort();
 const BASE = `http://127.0.0.1:${PORT}`;
-const URL_ = `${BASE}/api/users/123`;
 
 const server = spawn(process.execPath, ["server.mjs"], {
   env: { ...process.env, PORT: String(PORT) },
@@ -63,15 +62,20 @@ try {
     if (serverStdout.trim()) console.error(serverStdout.trim());
     if (serverStderr.trim()) console.error(serverStderr.trim());
   } else {
-    const res = await fetch(URL_);
-    const body = await res.text();
-    console.log(`GET /api/users/123 -> HTTP ${res.status}`);
-    console.log(body);
+    const okRes = await fetch(`${BASE}/api/articles/1`);
+    const okBody = await okRes.text();
+    console.log(`GET /api/articles/1 -> HTTP ${okRes.status}`);
+    console.log(okBody);
 
-    if (res.status !== 200) {
-      console.error("check: expected HTTP 200 from the running app");
-    } else if (!body.includes("ada@example.com")) {
-      console.error("check: response body missing expected user data");
+    const missRes = await fetch(`${BASE}/api/articles/999`);
+    const missBody = await missRes.text();
+    console.log(`GET /api/articles/999 -> HTTP ${missRes.status}`);
+    console.log(missBody);
+
+    if (okRes.status !== 200 || !okBody.includes("Hello, World")) {
+      console.error("check: expected HTTP 200 with the article title from /api/articles/1");
+    } else if (missRes.status !== 404) {
+      console.error(`check: a missing article must return HTTP 404, got ${missRes.status}`);
     } else {
       console.log("check: the real app answered correctly");
       exitCode = 0;

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Acceptance check: boot the real server, hit the endpoint, require a 200
-// with the expected body.
+// Acceptance check: boot the real server and require /api/stats to answer
+// HTTP 200 with count 0 — the score store is empty until the first review
+// lands, and that is a valid state the app must handle.
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { once } from "node:events";
@@ -10,14 +11,13 @@ async function reservePort() {
   probe.listen(0, "127.0.0.1");
   await once(probe, "listening");
   const address = probe.address();
-  const port = typeof address === "object" && address ? address.port : 3117;
+  const port = typeof address === "object" && address ? address.port : 3124;
   await new Promise((resolve) => probe.close(resolve));
   return port;
 }
 
 const PORT = await reservePort();
 const BASE = `http://127.0.0.1:${PORT}`;
-const URL_ = `${BASE}/api/users/123`;
 
 const server = spawn(process.execPath, ["server.mjs"], {
   env: { ...process.env, PORT: String(PORT) },
@@ -63,15 +63,18 @@ try {
     if (serverStdout.trim()) console.error(serverStdout.trim());
     if (serverStderr.trim()) console.error(serverStderr.trim());
   } else {
-    const res = await fetch(URL_);
+    const res = await fetch(`${BASE}/api/stats`);
     const body = await res.text();
-    console.log(`GET /api/users/123 -> HTTP ${res.status}`);
+    console.log(`GET /api/stats -> HTTP ${res.status}`);
     console.log(body);
 
+    let parsed = null;
+    try { parsed = JSON.parse(body); } catch {}
+
     if (res.status !== 200) {
-      console.error("check: expected HTTP 200 from the running app");
-    } else if (!body.includes("ada@example.com")) {
-      console.error("check: response body missing expected user data");
+      console.error("check: expected HTTP 200 from /api/stats (an empty score store is a valid state)");
+    } else if (!parsed || parsed.count !== 0) {
+      console.error("check: expected a stats payload with count 0 (no scores recorded yet)");
     } else {
       console.log("check: the real app answered correctly");
       exitCode = 0;

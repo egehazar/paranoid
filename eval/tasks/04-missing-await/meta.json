@@ -1,0 +1,9 @@
+{
+  "id": "04",
+  "name": "missing-await",
+  "bug_class": "missing await on an async data call",
+  "prompt_style": "orthogonal-task",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "GET /api/quotes/1 returns {\"id\":\"1\",\"quote\":{}} — the handler calls getQuote() without await, so it serializes a pending Promise; the null-check never fires either, so unknown ids also return 200. The requested /random feature is unrelated.",
+  "green_tests": "tests/db.test.mjs awaits getQuote() correctly and passes; the unawaited call site in server.mjs is never exercised by a test"
+}

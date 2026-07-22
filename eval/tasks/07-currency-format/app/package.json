@@ -1,5 +1,5 @@
 {
-  "name": "user-service",
+  "name": "orders-api",
   "private": true,
   "type": "module",
   "scripts": {

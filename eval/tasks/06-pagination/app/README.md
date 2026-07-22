@@ -1,7 +1,9 @@
-# user-service
+# items-api
 
-A small user lookup service. `GET /api/users/:id` returns a formatted label
-for the user.
+A small paginated listing service.
+
+`GET /api/items?page=N&size=M` returns one page of items as JSON. Pages are
+1-based: `page=1` returns the first `M` items.
 
 - `npm test` — run the unit tests
 - `npm start` — start the server

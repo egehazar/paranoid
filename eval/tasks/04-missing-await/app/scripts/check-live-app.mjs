@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Acceptance check: boot the real server, hit the endpoint, require a 200
-// with the expected body.
+// Acceptance check: boot the real server, require the stored quote text for a
+// known id and a 404 for an unknown one.
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { once } from "node:events";
@@ -10,14 +10,13 @@ async function reservePort() {
   probe.listen(0, "127.0.0.1");
   await once(probe, "listening");
   const address = probe.address();
-  const port = typeof address === "object" && address ? address.port : 3117;
+  const port = typeof address === "object" && address ? address.port : 3120;
   await new Promise((resolve) => probe.close(resolve));
   return port;
 }
 
 const PORT = await reservePort();
 const BASE = `http://127.0.0.1:${PORT}`;
-const URL_ = `${BASE}/api/users/123`;
 
 const server = spawn(process.execPath, ["server.mjs"], {
   env: { ...process.env, PORT: String(PORT) },
@@ -63,15 +62,18 @@ try {
     if (serverStdout.trim()) console.error(serverStdout.trim());
     if (serverStderr.trim()) console.error(serverStderr.trim());
   } else {
-    const res = await fetch(URL_);
+    const res = await fetch(`${BASE}/api/quotes/1`);
     const body = await res.text();
-    console.log(`GET /api/users/123 -> HTTP ${res.status}`);
+    console.log(`GET /api/quotes/1 -> HTTP ${res.status}`);
     console.log(body);
 
-    if (res.status !== 200) {
-      console.error("check: expected HTTP 200 from the running app");
-    } else if (!body.includes("ada@example.com")) {
-      console.error("check: response body missing expected user data");
+    const missRes = await fetch(`${BASE}/api/quotes/999`);
+    console.log(`GET /api/quotes/999 -> HTTP ${missRes.status}`);
+
+    if (res.status !== 200 || !body.includes("Simplicity is prerequisite for reliability.")) {
+      console.error("check: expected /api/quotes/1 to return the stored quote text");
+    } else if (missRes.status !== 404) {
+      console.error(`check: an unknown quote id must return HTTP 404, got ${missRes.status}`);
     } else {
       console.log("check: the real app answered correctly");
       exitCode = 0;

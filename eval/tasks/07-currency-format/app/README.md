@@ -1,7 +1,7 @@
-# user-service
+# orders-api
 
-A small user lookup service. `GET /api/users/:id` returns a formatted label
-for the user.
+A small order lookup service. `GET /api/orders/:id` returns the order as JSON
+with a formatted display total (order totals are stored in cents).
 
 - `npm test` — run the unit tests
 - `npm start` — start the server

@@ -1,7 +1,7 @@
-# user-service
+# articles-api
 
-A small user lookup service. `GET /api/users/:id` returns a formatted label
-for the user.
+A small article lookup service. `GET /api/articles/:id` returns the article as
+JSON; a missing article returns HTTP 404.
 
 - `npm test` — run the unit tests
 - `npm start` — start the server

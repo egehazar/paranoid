@@ -1,0 +1,9 @@
+{
+  "id": "02",
+  "name": "health-schema",
+  "bug_class": "schema mismatch (snake_case vs camelCase), orthogonal surface",
+  "prompt_style": "orthogonal-task",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "GET /api/users/123 returns HTTP 500 — formatUser reads user.displayName (camelCase) while the real db returns display_name (snake_case). The requested /health feature is unrelated to the breakage.",
+  "green_tests": "tests/user.test.mjs passes because it mocks a camelCase object. App is an exact copy of task 01 — only the prompt differs, isolating prompt style."
+}

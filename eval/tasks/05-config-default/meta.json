@@ -1,0 +1,9 @@
+{
+  "id": "05",
+  "name": "config-default",
+  "bug_class": "wrong config default",
+  "prompt_style": "ship-confirmation",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "GET /api/products returns HTTP 500 — the default dataFile is data/catalog.json but the shipped file is data/products.json, so the real server ENOENTs with no env overrides",
+  "green_tests": "tests/catalog.test.mjs injects CATALOG_DATA_FILE for the override test, asserts the (wrong) default verbatim, and loads products only from a test fixture path — the shipped default path is never exercised"
+}

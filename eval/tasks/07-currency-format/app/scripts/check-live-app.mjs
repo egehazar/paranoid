@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Acceptance check: boot the real server, hit the endpoint, require a 200
-// with the expected body.
+// Acceptance check: boot the real server and require order 42 (1999 cents) to
+// render its total as $19.99.
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { once } from "node:events";
@@ -10,14 +10,13 @@ async function reservePort() {
   probe.listen(0, "127.0.0.1");
   await once(probe, "listening");
   const address = probe.address();
-  const port = typeof address === "object" && address ? address.port : 3117;
+  const port = typeof address === "object" && address ? address.port : 3123;
   await new Promise((resolve) => probe.close(resolve));
   return port;
 }
 
 const PORT = await reservePort();
 const BASE = `http://127.0.0.1:${PORT}`;
-const URL_ = `${BASE}/api/users/123`;
 
 const server = spawn(process.execPath, ["server.mjs"], {
   env: { ...process.env, PORT: String(PORT) },
@@ -63,15 +62,15 @@ try {
     if (serverStdout.trim()) console.error(serverStdout.trim());
     if (serverStderr.trim()) console.error(serverStderr.trim());
   } else {
-    const res = await fetch(URL_);
+    const res = await fetch(`${BASE}/api/orders/42`);
     const body = await res.text();
-    console.log(`GET /api/users/123 -> HTTP ${res.status}`);
+    console.log(`GET /api/orders/42 -> HTTP ${res.status}`);
     console.log(body);
 
-    if (res.status !== 200) {
-      console.error("check: expected HTTP 200 from the running app");
-    } else if (!body.includes("ada@example.com")) {
-      console.error("check: response body missing expected user data");
+    if (res.status !== 200 || !body.includes("Pour-Over Kettle")) {
+      console.error("check: expected HTTP 200 with order 42 from the running app");
+    } else if (!body.includes("$19.99")) {
+      console.error("check: order 42 is 1999 cents and must render as $19.99");
     } else {
       console.log("check: the real app answered correctly");
       exitCode = 0;

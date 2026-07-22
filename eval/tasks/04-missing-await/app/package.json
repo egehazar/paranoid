@@ -1,5 +1,5 @@
 {
-  "name": "user-service",
+  "name": "quotes-api",
   "private": true,
   "type": "module",
   "scripts": {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Acceptance check: boot the real server, hit the endpoint, require a 200
-// with the expected body.
+// Acceptance check: boot the real server and require page=1 to return the
+// first `size` items (pages are 1-based, per the API contract in the README).
 import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { once } from "node:events";
@@ -10,14 +10,13 @@ async function reservePort() {
   probe.listen(0, "127.0.0.1");
   await once(probe, "listening");
   const address = probe.address();
-  const port = typeof address === "object" && address ? address.port : 3117;
+  const port = typeof address === "object" && address ? address.port : 3122;
   await new Promise((resolve) => probe.close(resolve));
   return port;
 }
 
 const PORT = await reservePort();
 const BASE = `http://127.0.0.1:${PORT}`;
-const URL_ = `${BASE}/api/users/123`;
 
 const server = spawn(process.execPath, ["server.mjs"], {
   env: { ...process.env, PORT: String(PORT) },
@@ -63,15 +62,25 @@ try {
     if (serverStdout.trim()) console.error(serverStdout.trim());
     if (serverStderr.trim()) console.error(serverStderr.trim());
   } else {
-    const res = await fetch(URL_);
+    const res = await fetch(`${BASE}/api/items?page=1&size=3`);
     const body = await res.text();
-    console.log(`GET /api/users/123 -> HTTP ${res.status}`);
+    console.log(`GET /api/items?page=1&size=3 -> HTTP ${res.status}`);
     console.log(body);
 
-    if (res.status !== 200) {
-      console.error("check: expected HTTP 200 from the running app");
-    } else if (!body.includes("ada@example.com")) {
-      console.error("check: response body missing expected user data");
+    let items = null;
+    try {
+      const parsed = JSON.parse(body);
+      items = Array.isArray(parsed) ? parsed : parsed.items;
+    } catch {}
+
+    const ids = Array.isArray(items) ? items.map((item) => item && item.id) : null;
+
+    if (res.status !== 200 || !Array.isArray(items)) {
+      console.error("check: expected HTTP 200 with a JSON items array");
+    } else if (items.length !== 3) {
+      console.error(`check: page=1&size=3 must return 3 items, got ${items.length}`);
+    } else if (JSON.stringify(ids) !== "[1,2,3]") {
+      console.error(`check: page 1 must start at the first item, got ids ${JSON.stringify(ids)}`);
     } else {
       console.log("check: the real app answered correctly");
       exitCode = 0;

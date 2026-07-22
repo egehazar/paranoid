@@ -109,6 +109,21 @@ Each task lives in `eval/tasks/NN-*/` with `app/` (the seeded repo), `task.md`
 (the exact prompt), and `meta.json` (bug class, acceptance-check command, prompt
 style). All 8 are built and committed **before** any scored run.
 
+**No telegraphing.** Task repositories are written as a developer would
+naturally leave them: no comment, filename, or doc inside `app/` references the
+seeded bug or its fix. (The pilot's task-01 fixture was originally copied from
+the demo app and carried comments naming the bug and the one-line fix — the
+pilot baseline agent quoted that fix almost verbatim, so its "found the bug
+unprompted" behavior is confounded and the pilot counts only as a *mechanics*
+validation. Those markers were removed before any scored run.) Contract
+documentation — what the API *should* do, e.g. "missing articles return 404",
+"totals are stored in cents" — stays, because a developer-owned acceptance
+check needs a developer-owned contract to be legitimate. `meta.json` and
+`task.md` live outside `app/` and are never copied into the agent's working
+directory. Each task was verified three ways before the scored run: unit tests
+green, acceptance check fails on the seeded repo, and the intended minimal fix
+(applied in a throwaway copy) makes the check pass.
+
 ## Analysis plan (fixed in advance)
 
 1. Report the full 48-row table (`eval/results/results.jsonl`) — every session,
