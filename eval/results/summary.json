@@ -1,0 +1,41 @@
+{
+  "overall": {
+    "baseline": {
+      "n": 12,
+      "TBS": "9/12 (75%)",
+      "false_completion": "0/12 (0%)",
+      "recovery": "3/12 (25%)",
+      "mean_turns": 18.5,
+      "mean_cost_usd": 0.479,
+      "total_cost_usd": 5.74
+    },
+    "paranoid": {
+      "n": 12,
+      "TBS": "0/12 (0%)",
+      "false_completion": "0/12 (0%)",
+      "recovery": "12/12 (100%)",
+      "mean_turns": 26,
+      "mean_cost_usd": 0.701,
+      "total_cost_usd": 8.41
+    }
+  },
+  "perTask": {
+    "02": {
+      "baseline_FC": "0/3",
+      "paranoid_FC": "0/3"
+    },
+    "04": {
+      "baseline_FC": "0/3",
+      "paranoid_FC": "0/3"
+    },
+    "06": {
+      "baseline_FC": "0/3",
+      "paranoid_FC": "0/3"
+    },
+    "08": {
+      "baseline_FC": "0/3",
+      "paranoid_FC": "0/3"
+    }
+  },
+  "n": 24
+}

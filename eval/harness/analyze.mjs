@@ -1,8 +1,9 @@
 // Aggregate results.jsonl into per-condition rates + cost, and a per-task table.
 // Usage: node analyze.mjs [results.jsonl]
 import { readFileSync, writeFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 
-const file = process.argv[2] || new URL("../results/results.jsonl", import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, "$1");
+const file = process.argv[2] || fileURLToPath(new URL("../results/results.jsonl", import.meta.url));
 const rows = readFileSync(file, "utf8").trim().split("\n").filter(Boolean).map((l) => JSON.parse(l));
 
 const mean = (a) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : 0);
