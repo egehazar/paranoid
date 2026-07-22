@@ -33,7 +33,7 @@
     <text x="82" y="240" fill="#0b0e14" font-size="16" font-weight="700">&#10007;&#160;&#160;ended broken &#8212; 9</text>
     <text x="893" y="240" fill="#0b0e14" font-size="16" font-weight="700">&#10003;&#160;&#160;ended working &#8212; 3</text>
   </g>
-  <text x="60" y="286" fill="#6f7a8a" font-size="15">all 9 broken endings said <tspan fill="#e6a0a0">VERDICT: BROKEN</tspan> &#8212; the agent knew, and stopped anyway &#160;·&#160; false completion <tspan fill="#e6edf3">0/12</tspan></text>
+  <text x="60" y="286" fill="#6f7a8a" font-size="15">all 9 broken endings said <tspan fill="#e6a0a0">VERDICT: BROKEN</tspan> &#8212; reported, not fixed &#160;·&#160; false completion <tspan fill="#e6edf3">0/12</tspan></text>
 
   <!-- bar 2: paranoid -->
   <text x="60" y="342" fill="#eef2f9" font-size="18" font-weight="700">with Paranoid <tspan fill="#f7b733">(stop-gate)</tspan></text>

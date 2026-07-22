@@ -47,6 +47,13 @@ for i in $(seq 1 "$RUNS"); do
       > "$WORK/session.json" 2> "$WORK/session.err" )
   t1="$(node -e 'process.stdout.write(String(Date.now()))')"
 
+  # Grade with the pristine developer-owned check: the oracle must be the
+  # committed check, not whatever the agent may have left in scripts/.
+  if ! diff -rq "$TASKDIR/app/scripts" "$WORK/scripts" >/dev/null 2>&1; then
+    echo "    note: agent modified scripts/ — restoring pristine check for grading"
+  fi
+  cp -r "$TASKDIR/app/scripts/." "$WORK/scripts/"
+
   ( cd "$WORK" && eval "$CHECK" > "$WORK/check.out" 2>&1 ); CHECKEXIT=$?
 
   node "$HERE/record.mjs" "$WORK/session.json" "$CHECKEXIT" \
