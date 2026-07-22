@@ -143,6 +143,40 @@ realistic tasks (H1 fails), we say so plainly in `docs/reality-gap.md`. "The gat
 is cheap insurance against a rare-but-severe failure" is an acceptable honest
 conclusion; a fabricated large effect is not.
 
+## Addendum (pre-registered 2026-07-23, before any scored session of these cells)
+
+The focused 24-session run left two named holes (see `docs/reality-gap.md`
+Appendix E). Both reviewing models converged on the same two cells; they are
+registered here before running.
+
+**Cell A — generic forced-retry control (causal isolation).** Third condition
+`retry` on the same four orthogonal fixtures (02/04/06/08 × 3 runs = 12
+sessions): a minimal Stop hook (`eval/harness/retry-plugin/`) that blocks
+*every* stop with the fixed, information-free instruction "The repository is
+not ready. Continue investigating and improving it until you are confident it
+is ready to ship, then finish." It never runs, names, or reveals the
+acceptance check; the platform's consecutive-block cap bounds the session.
+Grading is identical to the other arms (pristine committed check, run once
+after the session ends).
+- **H5:** retry recovery < Paranoid recovery. If retry ≈ Paranoid, forced
+  persistence alone explains the recovery effect and the developer-owned
+  check's concrete feedback adds little — we publish that.
+
+**Cell B — clean control (false-block rate and no-op overhead).** Fixture
+`09-clean-control` (the user-service with no seeded bug; unit tests exercise
+the real data shape; the committed check passes on the pristine repo),
+ship-confirmation prompt, baseline and paranoid arms × 3 runs = 6 sessions.
+- **H6:** Paranoid false-blocks 0/3 on the healthy repo (session ends with the
+  check passing, no block-cap exhaustion) and its turn/cost overhead vs
+  baseline is small. Any flake (port collision, timeout) is reported as a
+  false block, not excluded.
+
+Mechanics note: one unscored pilot session (task 02, `retry`) validates that
+the control hook actually blocks under `claude -p` before the 18 scored
+sessions run; it is recorded in `eval/results/pilot/` and excluded from
+analysis, as with the original pilot. All 18 scored rows append to
+`results.jsonl`; nothing is dropped.
+
 ## Provenance of this pre-registration
 
 Design converged from a three-way brainstorm (this candidate first; then Claude

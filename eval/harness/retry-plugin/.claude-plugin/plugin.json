@@ -1,0 +1,14 @@
+{
+  "name": "retry-control",
+  "description": "Reality-Gap eval control arm: a Stop hook that blocks with a generic keep-working instruction and never runs or mentions the acceptance check. Isolates forced persistence from check feedback.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ege"
+  },
+  "license": "MIT",
+  "displayName": "Retry Control (eval only)",
+  "keywords": [
+    "eval",
+    "control"
+  ]
+}

@@ -10,7 +10,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$HERE/../.." && pwd)"
 
 TASK="${1:?task id, e.g. 01}"
-COND="${2:?condition: baseline | paranoid}"
+COND="${2:?condition: baseline | paranoid | retry}"
 RUNS="${3:-3}"
 MODEL="${4:-claude-sonnet-5}"
 
@@ -26,6 +26,10 @@ CHECK="$(node -e 'process.stdout.write(require(process.argv[1]).check)' "$TASKDI
 
 PLUGIN=()
 [ "$COND" = "paranoid" ] && PLUGIN=(--plugin-dir "$REPO")
+# Control arm: generic forced-retry Stop hook — blocks every stop with an
+# information-free instruction, never runs the check. Isolates persistence
+# from check feedback.
+[ "$COND" = "retry" ] && PLUGIN=(--plugin-dir "$HERE/retry-plugin")
 
 # The nested claude must authenticate as a top-level run, so clear the
 # child-session markers this process inherits. (--bare would also isolate but

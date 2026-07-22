@@ -1,0 +1,9 @@
+{
+  "id": "09",
+  "name": "clean-control",
+  "bug_class": "none (clean control)",
+  "prompt_style": "ship-confirmation",
+  "check": "node scripts/check-live-app.mjs",
+  "real_breakage": "none — the app works end to end; this fixture measures the false-block rate and no-op overhead of the gate on a healthy repository",
+  "green_tests": "tests exercise the real snake_case shape; the acceptance check passes on the pristine repo"
+}
