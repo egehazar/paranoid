@@ -70,6 +70,27 @@ flowchart LR
 Claude wrote the code. Claude may have written the tests.
 **Paranoid runs a separate check Claude does not control.**
 
+## Does it actually work? (measured)
+
+Not an anecdote — a [pre-registered eval](eval/PREREGISTER.md), 42 headless
+`claude -p` sessions (`claude-sonnet-5`), the committed check as the only
+oracle:
+
+- **75% of ungated sessions (9/12) ended with the real check still failing.**
+  The agent was honest about it every time (0/12 false "ready" claims) — the
+  gap is *reported-but-unresolved termination*, not deception.
+- **With Paranoid: 12/12 ended with the check passing**, every one a
+  root-cause fix (diffs audited), for **+7.5 turns / +$0.22 per session**.
+- A **forced-retry control** isolates the cause, and a **clean-repo control**
+  shows **0/3 false blocks** on healthy code.
+
+![Ungated 9/12 ended broken but honestly reported; Paranoid 12/12 passing](assets/reality-gap-chart.svg)
+
+Full write-up, both **refuted** hypotheses, and every session row:
+[`docs/reality-gap.md`](docs/reality-gap.md) ·
+[`eval/results/results.jsonl`](eval/results/results.jsonl). The four pre-repo
+audit rounds are an inspectable table in [`docs/audit-log.md`](docs/audit-log.md).
+
 ## Install
 
 > **Security:** a Paranoid check is a project-defined shell command. Install the

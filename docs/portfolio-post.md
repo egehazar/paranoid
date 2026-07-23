@@ -39,6 +39,54 @@ mocked test is wrong. A test that mocks its own assumptions can be simultaneousl
 
 ---
 
+## I measured it (pre-registered)
+
+An anecdote is a demo; a number is a result. So I ran a
+[pre-registered eval](../eval/PREREGISTER.md) — design, hypotheses, and a
+no-cherry-picking commitment committed *before* scoring — driving headless
+`claude -p` (`claude-sonnet-5`) on green-tests/broken-app fixtures, with the
+committed acceptance check as the only oracle (no LLM judge). **42 sessions,
+every row published** ([`results.jsonl`](../eval/results/results.jsonl)),
+including the hypotheses that didn't survive.
+
+The headline surprised me. My pre-registered guess (H1) was that an ungated
+agent would sometimes *claim* a broken app was ready. It didn't — not once in
+12 sessions. What it did instead:
+
+> **75% of ungated sessions (9/12) ended with the developer-owned check still
+> failing — and the agent said so every time (0/12 false claims).** Loading
+> Paranoid took that to **12/12 sessions ending with the check passing**, each
+> a root-cause fix (all diffs audited), for **+7.5 turns / +$0.22 per
+> session.**
+
+![How sessions ended: ungated 9/12 broken but honestly reported vs Paranoid 12/12 passing](../assets/reality-gap-chart.svg)
+
+So the real failure class isn't deception — it's **reported-but-unresolved
+termination**: the model's task-scoped "done" is narrower than the repository
+owner's definition of done, and the session ends on top of software the agent
+itself flagged as broken. Paranoid moves the developer-owned check from
+*advice* to *termination condition*.
+
+Two follow-up cells (also pre-registered) keep me honest about *why* it works:
+
+- **A generic forced-retry control** — a hook that blocks every stop with
+  "not ready, keep working" but **never runs the check** — also recovered
+  12/12. So the recovery comes from *forced persistence*, not from the check's
+  feedback. What the developer-owned check buys is that persistence made
+  **cheap and clean**: half the turns (26 vs 54+), zero timeout-bound endings
+  (vs 5/12 for the blind control), ~2.4× lower cost, and a clean termination
+  every time instead of grinding into the platform's block cap.
+- **A clean (already-healthy) repo** — Paranoid **false-blocked 0/3**, made
+  zero unnecessary edits, and was actually *cheaper* than the ungated arm.
+
+The honest one-liner: *Paranoid didn't make the agent honest (it already was)
+or make recovery possible (persistence alone does that) — it enforces the
+repo's definition of done at the session boundary, cheaply, without crying
+wolf on healthy code.* Full analysis, caveats, and the two refuted hypotheses:
+[`docs/reality-gap.md`](./reality-gap.md).
+
+---
+
 ## Design decisions (and why)
 
 Every one of these is a "fail toward catching the bug" choice:
@@ -152,9 +200,12 @@ Copied from the project's own honesty, not softened:
 
 > **Paranoid** — a Claude Code plugin that blocks an AI coding agent from
 > declaring a task "done" until a developer-owned check passes against the
-> *running* application, closing the "green tests, broken feature" gap.
-> Hardened across four adversarial AI-vs-AI audit rounds; ships a 14/14
-> zero-dependency suite and passes `claude plugin validate --strict`. The
-> `evidence/` files are first-party, reproducible command captures with exit
-> codes; the independent check is CI, which re-runs the suite and re-proves the
+> *running* application, closing the "green tests, broken feature" gap. In a
+> pre-registered 42-session eval, ungated agents ended **75% of sessions on
+> still-broken software**; Paranoid took that to **100% ending with the check
+> passing** for **+$0.22/session**, with a forced-retry control isolating the
+> effect and a clean-repo control showing **0 false blocks**. Hardened across
+> four adversarial AI-vs-AI audit rounds; ships a 14/14 zero-dependency suite
+> and passes `claude plugin validate --strict`. Every session row, both
+> refuted hypotheses, and the analysis are published; CI re-proves the
 > green-tests/broken-app thesis on GitHub's runners every push.
