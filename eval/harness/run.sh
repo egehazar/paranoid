@@ -18,7 +18,7 @@ TASKDIR="$(ls -d "$REPO/eval/tasks/${TASK}"-* 2>/dev/null | head -1)"
 [ -d "$TASKDIR" ] || { echo "No task matching '$TASK' in eval/tasks/"; exit 1; }
 
 RUNS_DIR="${RUNS_DIR:-${TMPDIR:-/tmp}/paranoid-eval-runs}"
-RESULTS="$REPO/eval/results/results.jsonl"
+RESULTS="${RESULTS_FILE:-$REPO/eval/results/results.jsonl}"
 mkdir -p "$RUNS_DIR" "$(dirname "$RESULTS")"
 
 PROMPT="$(cat "$TASKDIR/task.md")"
