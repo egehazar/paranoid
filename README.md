@@ -70,6 +70,31 @@ flowchart LR
 Claude wrote the code. Claude may have written the tests.
 **Paranoid runs a separate check Claude does not control.**
 
+## Quick start
+
+Inside Claude Code, in a project you trust:
+
+```text
+/plugin marketplace add egehazar/paranoid
+/plugin install paranoid@paranoid        ← choose Local scope
+/reload-plugins
+```
+
+Then drop a `.paranoid.json` at the repo root and commit it:
+
+```json
+{
+  "check": "node scripts/check-live-app.mjs",
+  "timeoutSeconds": 120,
+  "protected": ["scripts/check-live-app.mjs"]
+}
+```
+
+Any command works as the check — it just has to exit non-zero while the app is
+broken. That's the entire setup; the agent can no longer finish until it
+passes. Manual (no-marketplace) install and the security note are in
+[Install](#install).
+
 ## Does it actually work? (measured)
 
 Not an anecdote — a [pre-registered eval](eval/PREREGISTER.md), 42 headless
