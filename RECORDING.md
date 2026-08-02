@@ -1,5 +1,11 @@
 # Recording the Paranoid demo
 
+> **Status (2026-08-02):** a real gated session has been captured end-to-end —
+> block, root-cause fix, and passing finish — with full transcripts and the
+> `--debug` log published in [`evidence/live-session/`](./evidence/live-session/)
+> and distilled in `evidence/08-live-gated-session.txt`. This document remains
+> the runbook for filming a *visual* (GIF/video) take of the same flow.
+
 This is the human-recorded companion to the scripted evidence in `evidence/`.
 Record it in the **live-demo project**, not this repo:
 

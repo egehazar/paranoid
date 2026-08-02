@@ -1,0 +1,538 @@
+2026-08-02T13:41:20.551Z [DEBUG] MDM settings load completed in 38ms
+2026-08-02T13:41:20.586Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: <live-demo>\.claude\settings.json
+2026-08-02T13:41:20.588Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: C:\Program Files\ClaudeCode\managed-settings.json
+2026-08-02T13:41:20.589Z [DEBUG] CA certs: Config fallback - globalEnv keys: , settingsEnv keys: none
+2026-08-02T13:41:20.595Z [DEBUG] [init] configureGlobalMTLS starting
+2026-08-02T13:41:20.595Z [DEBUG] [init] configureGlobalMTLS complete
+2026-08-02T13:41:20.595Z [DEBUG] [init] configureGlobalAgents starting
+2026-08-02T13:41:20.595Z [DEBUG] CA certs: stores=bundled,system, extraCertsPath=undefined
+2026-08-02T13:41:20.595Z [DEBUG] CA certs: Loaded 120 bundled root certificates
+2026-08-02T13:41:20.608Z [DEBUG] CA certs: Dropped 10 expired certificate(s) from system store
+2026-08-02T13:41:20.608Z [DEBUG] CA certs: Loaded 92 system CA certificates
+2026-08-02T13:41:20.608Z [DEBUG] mTLS: Creating HTTPS agent with custom certificates
+2026-08-02T13:41:20.608Z [DEBUG] [init] configureGlobalAgents complete
+2026-08-02T13:41:20.609Z [DEBUG] Using bash path: "C:\Program Files\Git\bin\bash.exe"
+2026-08-02T13:41:20.611Z [DEBUG] Error log sink initialized
+2026-08-02T13:41:20.626Z [DEBUG] [ToolSearch:optimistic] mode=tst, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-08-02T13:41:20.627Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-08-02T13:41:20.632Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-08-02T13:41:20.661Z [DEBUG] Loaded 1 installed plugins from <home>\.claude\plugins\installed_plugins.json
+2026-08-02T13:41:20.674Z [DEBUG] [STARTUP] Running setup()...
+2026-08-02T13:41:20.677Z [DEBUG] Loading skills from: managed=C:\Program Files\ClaudeCode\.claude\skills, user=<home>\.claude\skills, project=[]
+2026-08-02T13:41:20.679Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: C:\Program Files\ClaudeCode\managed-settings.json
+2026-08-02T13:41:20.682Z [DEBUG] Broken symlink or missing file encountered for settings.json at path: <live-demo>\.claude\settings.json
+2026-08-02T13:41:20.684Z [DEBUG] Error log sink initialized
+2026-08-02T13:41:20.693Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\commands: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\commands'
+2026-08-02T13:41:20.693Z [DEBUG] Failed to stat directory <home>\.claude\commands: ENOENT: no such file or directory, stat '<home>\.claude\commands'
+2026-08-02T13:41:20.694Z [DEBUG] Failed to stat directory <home>\.claude\agents: ENOENT: no such file or directory, stat '<home>\.claude\agents'
+2026-08-02T13:41:20.694Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\agents: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\agents'
+2026-08-02T13:41:20.707Z [DEBUG] [STARTUP] setup() completed in 33ms
+2026-08-02T13:41:20.707Z [DEBUG] Cleared CA certificates cache
+2026-08-02T13:41:20.707Z [DEBUG] Cleared mTLS configuration cache
+2026-08-02T13:41:20.707Z [DEBUG] Cleared proxy agent cache
+2026-08-02T13:41:20.707Z [DEBUG] CA certs: stores=bundled,system, extraCertsPath=undefined
+2026-08-02T13:41:20.707Z [DEBUG] CA certs: Loaded 120 bundled root certificates
+2026-08-02T13:41:20.710Z [DEBUG] CA certs: Dropped 10 expired certificate(s) from system store
+2026-08-02T13:41:20.710Z [DEBUG] CA certs: Loaded 92 system CA certificates
+2026-08-02T13:41:20.710Z [DEBUG] mTLS: Creating HTTPS agent with custom certificates
+2026-08-02T13:41:20.711Z [DEBUG] [STARTUP] Loading commands and agents...
+2026-08-02T13:41:20.726Z [DEBUG] Read hooks.json for plugin paranoid (enabled=true): <repo>\hooks\hooks.json
+2026-08-02T13:41:20.728Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 17, project: 0, additional: 0, legacy commands: 0)
+2026-08-02T13:41:20.730Z [DEBUG] Loaded 1 skills-as-plugins
+2026-08-02T13:41:20.732Z [DEBUG] Found 2 plugins (2 enabled, 0 disabled)
+2026-08-02T13:41:20.732Z [DEBUG] getPluginSkills: Processing 2 enabled plugins
+2026-08-02T13:41:20.732Z [DEBUG] Checking plugin paranoid: skillsPath=exists, skillsPaths=0 paths
+2026-08-02T13:41:20.732Z [DEBUG] Attempting to load skills from plugin paranoid default skillsPath: <repo>\skills
+2026-08-02T13:41:20.732Z [DEBUG] Checking plugin instagram-skills: skillsPath=exists, skillsPaths=0 paths
+2026-08-02T13:41:20.732Z [DEBUG] Attempting to load skills from plugin instagram-skills default skillsPath: <home>\.claude\skills\instagram-marketing\skills
+2026-08-02T13:41:20.732Z [DEBUG] Total plugin workflows loaded: 0
+2026-08-02T13:41:20.733Z [DEBUG] Loading hooks from plugin: paranoid
+2026-08-02T13:41:20.733Z [DEBUG] Registered 2 hooks from 2 plugins
+2026-08-02T13:41:20.733Z [DEBUG] Total plugin commands loaded: 0
+2026-08-02T13:41:20.734Z [DEBUG] Total plugin agents loaded: 0
+2026-08-02T13:41:20.743Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-audience-insights\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:20.744Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-profile-optimizer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:20.749Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-repurposer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:20.752Z [DEBUG] Loaded 9 skills from plugin instagram-skills default directory
+2026-08-02T13:41:20.754Z [DEBUG] Loaded 1 skills from plugin paranoid default directory
+2026-08-02T13:41:20.756Z [DEBUG] Git remote URL: null
+2026-08-02T13:41:20.756Z [DEBUG] No git remote URL found
+2026-08-02T13:41:20.759Z [DEBUG] Total plugin skills loaded: 10 (0 duplicate/user-owned entries skipped)
+2026-08-02T13:41:20.759Z [DEBUG] getSkills returning: 17 skill dir commands, 10 plugin skills, 35 bundled skills, 0 builtin plugin skills
+2026-08-02T13:41:20.765Z [DEBUG] [STARTUP] Commands and agents loaded in 54ms
+2026-08-02T13:41:20.765Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2026-08-02T13:41:20.766Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2026-08-02T13:41:20.766Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2026-08-02T13:41:20.766Z [DEBUG] Starting background startup prefetches
+2026-08-02T13:41:20.766Z [DEBUG] [Bootstrap] Fetching
+2026-08-02T13:41:20.767Z [DEBUG] Passes: Using fresh cached eligibility data
+2026-08-02T13:41:20.769Z [DEBUG] [STARTUP] MCP configs resolved in 110ms (awaited at +142ms)
+2026-08-02T13:41:20.770Z [DEBUG] All plugins already exist, skipping migration
+2026-08-02T13:41:20.770Z [DEBUG] Initialized versioned plugins system with 1 plugins
+2026-08-02T13:41:20.771Z [DEBUG] Cleared CA certificates cache
+2026-08-02T13:41:20.771Z [DEBUG] Cleared mTLS configuration cache
+2026-08-02T13:41:20.771Z [DEBUG] Cleared proxy agent cache
+2026-08-02T13:41:20.771Z [DEBUG] CA certs: stores=bundled,system, extraCertsPath=undefined
+2026-08-02T13:41:20.771Z [DEBUG] CA certs: Loaded 120 bundled root certificates
+2026-08-02T13:41:20.774Z [DEBUG] CA certs: Dropped 10 expired certificate(s) from system store
+2026-08-02T13:41:20.774Z [DEBUG] CA certs: Loaded 92 system CA certificates
+2026-08-02T13:41:20.774Z [DEBUG] mTLS: Creating HTTPS agent with custom certificates
+2026-08-02T13:41:20.776Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:20.777Z [DEBUG] [MCP] --mcp-config servers running fully async (nonblocking)
+2026-08-02T13:41:20.777Z [DEBUG] [MCP] claude.ai connectors running fully async (nonblocking)
+2026-08-02T13:41:20.778Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-08-02T13:41:20.778Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-08-02T13:41:20.789Z [WARN] [3P telemetry] Event dropped (no event logger initialized): hook_execution_start
+2026-08-02T13:41:20.908Z [DEBUG] Grove: Using fresh cached config
+2026-08-02T13:41:20.915Z [DEBUG] Total LSP servers loaded: 0
+2026-08-02T13:41:20.915Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-08-02T13:41:20.915Z [DEBUG] LSP manager initialized with 0 servers
+2026-08-02T13:41:20.915Z [DEBUG] LSP server manager initialized successfully
+2026-08-02T13:41:20.915Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-08-02T13:41:20.916Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\skills: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\skills'
+2026-08-02T13:41:21.009Z [DEBUG] Watching for changes in skill/command directories: <home>\.claude\skills...
+2026-08-02T13:41:21.031Z [DEBUG] Watching for changes in setting files <home>\.claude\settings.json, <live-demo>\.claude\settings.json, <live-demo>\.claude\settings.local.json...
+2026-08-02T13:41:21.087Z [DEBUG] [auto-mode] verifyAutoModeGateAccess: enabledState=enabled disabledBySettings=false model=claude-fable-5 modelSupported=true disableFastModeBreakerFires=false carouselAvailable=true canEnterAuto=true
+2026-08-02T13:41:21.094Z [DEBUG] Ripgrep first use test: PASSED (mode=embedded, path=<home>\.local\bin\claude.exe)
+2026-08-02T13:41:21.124Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:41:21.124Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.32676.024ea7cb9446
+2026-08-02T13:41:21.126Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:41:21.128Z [DEBUG] Temp file written successfully, size: 74482 bytes
+2026-08-02T13:41:21.128Z [DEBUG] Renaming <home>\.claude.json.tmp.32676.024ea7cb9446 to <home>\.claude.json
+2026-08-02T13:41:21.129Z [DEBUG] File <home>\.claude.json written atomically
+2026-08-02T13:41:21.155Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-profile-optimizer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:21.155Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-repurposer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:21.156Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\.codex-marketplace\instagram-skills\skills\ig-audience-insights\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:21.157Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\.codex-marketplace\instagram-skills\skills\ig-profile-optimizer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:21.157Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\.codex-marketplace\instagram-skills\skills\ig-repurposer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:21.157Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-audience-insights\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:41:21.406Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:41:21.491Z [DEBUG] Org fast mode: disabled (extra_usage_disabled)
+2026-08-02T13:41:21.509Z [DEBUG] [claudeai-mcp] Fetched 7 servers
+2026-08-02T13:41:21.510Z [DEBUG] mcp runtime arm: v1 (source: default)
+2026-08-02T13:41:21.529Z [DEBUG] MCP server "claude.ai Vercel": Initializing claude.ai proxy transport for server mcpsrv_01Qz41eT7zjvuDZkPBFZZCj7
+2026-08-02T13:41:21.529Z [DEBUG] MCP server "claude.ai Vercel": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Qz41eT7zjvuDZkPBFZZCj7
+2026-08-02T13:41:21.529Z [DEBUG] MCP server "claude.ai Vercel": claude.ai proxy transport created successfully
+2026-08-02T13:41:21.531Z [DEBUG] MCP server "claude.ai Vercel": Starting connection with timeout of 30000ms
+2026-08-02T13:41:21.534Z [DEBUG] MCP server "claude.ai Vercel": Stateless claudeai-proxy — resolving MCP initialize from cached projection
+2026-08-02T13:41:21.534Z [DEBUG] MCP server "claude.ai Higgsfield": Initializing claude.ai proxy transport for server mcpsrv_01NyvKeBSw7eB1VG1AGKkV8Y
+2026-08-02T13:41:21.534Z [DEBUG] MCP server "claude.ai Higgsfield": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01NyvKeBSw7eB1VG1AGKkV8Y
+2026-08-02T13:41:21.534Z [DEBUG] MCP server "claude.ai Higgsfield": claude.ai proxy transport created successfully
+2026-08-02T13:41:21.535Z [DEBUG] MCP server "claude.ai Higgsfield": Starting connection with timeout of 30000ms
+2026-08-02T13:41:21.535Z [DEBUG] MCP server "claude.ai Figma": Initializing claude.ai proxy transport for server mcpsrv_01QXz1zqEMCygQ5kaMLsyMdt
+2026-08-02T13:41:21.535Z [DEBUG] MCP server "claude.ai Figma": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01QXz1zqEMCygQ5kaMLsyMdt
+2026-08-02T13:41:21.536Z [DEBUG] MCP server "claude.ai Figma": claude.ai proxy transport created successfully
+2026-08-02T13:41:21.536Z [DEBUG] MCP server "claude.ai Figma": Starting connection with timeout of 30000ms
+2026-08-02T13:41:21.537Z [DEBUG] MCP server "claude.ai Google Drive": Initializing claude.ai proxy transport for server mcpsrv_016Y1sJzAt7cXuKfPAvxpFjm
+2026-08-02T13:41:21.537Z [DEBUG] MCP server "claude.ai Google Drive": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_016Y1sJzAt7cXuKfPAvxpFjm
+2026-08-02T13:41:21.537Z [DEBUG] MCP server "claude.ai Google Drive": claude.ai proxy transport created successfully
+2026-08-02T13:41:21.538Z [DEBUG] MCP server "claude.ai Google Drive": Starting connection with timeout of 30000ms
+2026-08-02T13:41:21.539Z [DEBUG] MCP server "claude.ai Google Drive": Stateless claudeai-proxy — resolving MCP initialize from cached projection
+2026-08-02T13:41:21.539Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01J8rB2dM7nnstdu869eoybc
+2026-08-02T13:41:21.539Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01J8rB2dM7nnstdu869eoybc
+2026-08-02T13:41:21.539Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-08-02T13:41:21.539Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-08-02T13:41:21.539Z [DEBUG] MCP server "claude.ai Gmail": Stateless claudeai-proxy — resolving MCP initialize from cached projection
+2026-08-02T13:41:21.541Z [DEBUG] MCP server "claude.ai Vercel": Successfully connected (transport: claudeai-proxy) in 12ms
+2026-08-02T13:41:21.541Z [DEBUG] MCP server "claude.ai Vercel": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"Vercel MCP Server","title":"Vercel MCP Server","icons":[{"src":"https://mcp.vercel.com/icons/vercel-light.svg","mimeType":"image/svg+xml","sizes":["any"],"theme":"light"},{"src":"https://mcp.vercel.com/icons/vercel-dark.svg","mimeType":"image/svg+xml","sizes":["any"],"theme":"dark"}],"version":"0.1.0","websiteUrl":"https://vercel.com","description":"Vercel's official MCP server — Vercel platform tools, deployment management, and documentation for AI assistants."}}
+2026-08-02T13:41:21.541Z [DEBUG] [MCP] Server "claude.ai Vercel" connected with subscribe=false
+2026-08-02T13:41:21.543Z [DEBUG] MCP server "claude.ai Google Drive": Successfully connected (transport: claudeai-proxy) in 6ms
+2026-08-02T13:41:21.543Z [DEBUG] MCP server "claude.ai Google Drive": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"StatelessServer","version":"ESF"}}
+2026-08-02T13:41:21.543Z [DEBUG] [MCP] Server "claude.ai Google Drive" connected with subscribe=false
+2026-08-02T13:41:21.543Z [DEBUG] MCP server "claude.ai Gmail": Successfully connected (transport: claudeai-proxy) in 4ms
+2026-08-02T13:41:21.543Z [DEBUG] MCP server "claude.ai Gmail": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"StatelessServer","version":"ESF"}}
+2026-08-02T13:41:21.543Z [DEBUG] [MCP] Server "claude.ai Gmail" connected with subscribe=false
+2026-08-02T13:41:21.568Z [DEBUG] [Bootstrap] Fetch ok
+2026-08-02T13:41:21.568Z [DEBUG] [Bootstrap] Cache updated, persisting to disk
+2026-08-02T13:41:21.572Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:41:21.572Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.32676.9b02fee89034
+2026-08-02T13:41:21.573Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:41:21.574Z [DEBUG] Temp file written successfully, size: 74481 bytes
+2026-08-02T13:41:21.574Z [DEBUG] Renaming <home>\.claude.json.tmp.32676.9b02fee89034 to <home>\.claude.json
+2026-08-02T13:41:21.575Z [DEBUG] File <home>\.claude.json written atomically
+2026-08-02T13:41:21.859Z [DEBUG] [ScheduledTasks] scheduler start() — enabled=false, hasTasks=false
+2026-08-02T13:41:21.877Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\output-styles: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\output-styles'
+2026-08-02T13:41:21.877Z [DEBUG] Failed to stat directory <home>\.claude\output-styles: ENOENT: no such file or directory, stat '<home>\.claude\output-styles'
+2026-08-02T13:41:21.877Z [DEBUG] Total plugin output styles loaded: 0
+2026-08-02T13:41:21.878Z [DEBUG] act_dont_rederive_arm_active source=growthbook
+2026-08-02T13:41:21.880Z [DEBUG] installPluginsForHeadless: starting
+2026-08-02T13:41:21.887Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:41:21.887Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:41:21.887Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:41:21.888Z [DEBUG] Sending 36 skills via attachment (initial)
+2026-08-02T13:41:21.888Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:41:22.144Z [DEBUG] [mcp-registry] Loaded 294 official MCP URLs (legacy)
+2026-08-02T13:41:22.242Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:41:22.250Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:22.266Z [DEBUG] Dynamic tool loading: 0/19 deferred tools included
+2026-08-02T13:41:22.267Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000;
+2026-08-02T13:41:22.267Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:22.268Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:22.270Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:22.270Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:41:22.272Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=54ea70df-57e1-4eeb-bc21-91e152592591 source=sdk
+2026-08-02T13:41:23.156Z [DEBUG] MCP server "claude.ai Figma": Successfully connected (transport: claudeai-proxy) in 1621ms
+2026-08-02T13:41:23.156Z [DEBUG] MCP server "claude.ai Figma": Server instructions truncated from 4986 to 2048 chars
+2026-08-02T13:41:23.156Z [DEBUG] MCP server "claude.ai Figma": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Figma MCP Server","icons":[{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"}],"version":"1.0.0","websiteUrl":"https://developers.figma.com/docs/figma-mcp-server/"}}
+2026-08-02T13:41:23.157Z [DEBUG] [MCP] Server "claude.ai Figma" connected with subscribe=false
+2026-08-02T13:41:23.601Z [DEBUG] MCP server "claude.ai Higgsfield": Successfully connected (transport: claudeai-proxy) in 2067ms
+2026-08-02T13:41:23.601Z [DEBUG] MCP server "claude.ai Higgsfield": Server instructions truncated from 4478 to 2048 chars
+2026-08-02T13:41:23.601Z [DEBUG] MCP server "claude.ai Higgsfield": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Higgsfield AI","version":"1.0.0","description":"Higgsfield creative platform for image, video, and audio generation, marketing asset workflows, and Virality Predictor video analysis for attention, engagement, and audience response."}}
+2026-08-02T13:41:23.601Z [DEBUG] [MCP] Server "claude.ai Higgsfield" connected with subscribe=false
+2026-08-02T13:41:23.807Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:41:23.807Z [DEBUG] [API:timing] first byte after 1538ms
+2026-08-02T13:41:24.796Z [DEBUG] MCP server "claude.ai Higgsfield": Normalized input schema for tool "video_analysis_create" (flattened top-level oneOf)
+2026-08-02T13:41:29.492Z [INFO] [Stall] tool_dispatch_start tool=Skill toolUseId=toolu_0194hLKy3G6tZAAXYMvU3CTq permissionDecisionMs=4
+2026-08-02T13:41:29.499Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:41:29.499Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:41:29.499Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:41:29.499Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:41:29.500Z [DEBUG] SkillTool returning 2 newMessages for skill paranoid:paranoid
+2026-08-02T13:41:29.500Z [INFO] [Stall] tool_dispatch_end tool=Skill toolUseId=toolu_0194hLKy3G6tZAAXYMvU3CTq outcome=ok durationMs=8
+2026-08-02T13:41:29.507Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:41:29.507Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.32676.4b7952851000
+2026-08-02T13:41:29.508Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:41:29.509Z [DEBUG] Temp file written successfully, size: 74481 bytes
+2026-08-02T13:41:29.509Z [DEBUG] Renaming <home>\.claude.json.tmp.32676.4b7952851000 to <home>\.claude.json
+2026-08-02T13:41:29.510Z [DEBUG] File <home>\.claude.json written atomically
+2026-08-02T13:41:29.723Z [INFO] [Stall] tool_dispatch_start tool=Glob toolUseId=toolu_01NwArKL4W1y71XyGgavXkYP permissionDecisionMs=5
+2026-08-02T13:41:29.780Z [INFO] [Stall] tool_dispatch_end tool=Glob toolUseId=toolu_01NwArKL4W1y71XyGgavXkYP outcome=ok durationMs=57
+2026-08-02T13:41:29.785Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:41:29.785Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:41:29.785Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:41:29.785Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:41:29.791Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:41:29.792Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde1yy5KTTNPweKkL419E;
+2026-08-02T13:41:29.792Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:29.792Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:29.794Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:29.794Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:41:29.795Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=62045288-e261-4fa1-90fb-7ff58a05251e source=sdk
+2026-08-02T13:41:31.185Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:41:31.185Z [DEBUG] [API:timing] first byte after 1391ms
+2026-08-02T13:41:34.958Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_01UnkNg3qfa8jtByz7nbDcDL permissionDecisionMs=1
+2026-08-02T13:41:34.960Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_01UnkNg3qfa8jtByz7nbDcDL outcome=ok durationMs=2
+2026-08-02T13:41:35.431Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_01W7EPPMGDkJ8SerBK7vYCL3 permissionDecisionMs=1
+2026-08-02T13:41:35.439Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_01W7EPPMGDkJ8SerBK7vYCL3 outcome=ok durationMs=8
+2026-08-02T13:41:35.950Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_014wdKPrUnzvzFetYhwJ8bXa permissionDecisionMs=2
+2026-08-02T13:41:35.960Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_014wdKPrUnzvzFetYhwJ8bXa outcome=ok durationMs=10
+2026-08-02T13:41:37.141Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_01Mg1wo3JGT9uRx2ipeo2e8D permissionDecisionMs=1
+2026-08-02T13:41:37.167Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_01Mg1wo3JGT9uRx2ipeo2e8D outcome=ok durationMs=26
+2026-08-02T13:41:37.422Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_01BLXTry954K1b56NneBqV7t permissionDecisionMs=2
+2026-08-02T13:41:37.431Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_01BLXTry954K1b56NneBqV7t outcome=ok durationMs=9
+2026-08-02T13:41:37.816Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_016CFgoa8BfXAbBCUMFB6FBj permissionDecisionMs=1
+2026-08-02T13:41:37.841Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_016CFgoa8BfXAbBCUMFB6FBj outcome=ok durationMs=25
+2026-08-02T13:41:38.463Z [INFO] [Stall] tool_dispatch_start tool=Read toolUseId=toolu_011hyAPd6nAtT8APqrHFMv8r permissionDecisionMs=1
+2026-08-02T13:41:38.476Z [INFO] [Stall] tool_dispatch_end tool=Read toolUseId=toolu_011hyAPd6nAtT8APqrHFMv8r outcome=ok durationMs=13
+2026-08-02T13:41:38.587Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:41:38.587Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:41:38.587Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:41:38.587Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:41:38.636Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:41:38.637Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde1zWAM39qFbmqKXiqDu;
+2026-08-02T13:41:38.638Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:38.638Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:38.647Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:38.648Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:41:38.648Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=0aa6d2a7-cda7-4c2e-861b-f7c195f5cfdf source=sdk
+2026-08-02T13:41:40.174Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:41:40.174Z [DEBUG] [API:timing] first byte after 1527ms
+2026-08-02T13:41:43.620Z [INFO] [Stall] tool_dispatch_start tool=PowerShell toolUseId=toolu_01MRBgg7rX6tMqnR2raMofPS permissionDecisionMs=446
+2026-08-02T13:41:44.440Z [INFO] [Stall] tool_dispatch_end tool=PowerShell toolUseId=toolu_01MRBgg7rX6tMqnR2raMofPS outcome=ok durationMs=820
+2026-08-02T13:41:44.444Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:41:44.444Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:41:44.444Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:41:44.444Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:41:44.449Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:41:44.450Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde21ACakGV4rY5gFKeuq;
+2026-08-02T13:41:44.450Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:44.450Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:44.451Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:44.451Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:41:44.452Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=ba871a3b-31bd-4e14-b63b-c9260994fd01 source=sdk
+2026-08-02T13:41:46.378Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:41:46.378Z [DEBUG] [API:timing] first byte after 1927ms
+2026-08-02T13:41:46.915Z [INFO] [Stall] tool_dispatch_start tool=PowerShell toolUseId=toolu_0111VzV3WT7eSvyWHinmifCq permissionDecisionMs=358
+2026-08-02T13:41:48.830Z [WARN] [Stall] tool_dispatch_end tool=PowerShell toolUseId=toolu_0111VzV3WT7eSvyWHinmifCq outcome=error durationMs=1915
+2026-08-02T13:41:48.830Z [DEBUG] PowerShell tool error (1915ms): Shell command failed
+2026-08-02T13:41:48.838Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:41:48.838Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:41:48.838Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:41:48.838Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:41:48.842Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:41:48.843Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde21asQ3tuoRLDAnC1XU;
+2026-08-02T13:41:48.844Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:48.844Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:48.846Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:48.846Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:41:48.847Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=2a801466-d2d2-439a-a3ab-849d4eefbebe source=sdk
+2026-08-02T13:41:50.067Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:41:50.067Z [DEBUG] [API:timing] first byte after 1221ms
+2026-08-02T13:41:57.915Z [DEBUG] Plugin autoupdate: checking installed plugins
+2026-08-02T13:41:59.028Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:41:59.028Z [DEBUG] "Hook Stop (Stop) error:\n\nPARANOID\n──────────────────────────────────────────────\nReal app check   ✗ failed (exit 1, 1.2s)\n  node scripts/check-live-app.mjs\n\nGET /api/users/123 -> HTTP 500\ninternal error: formatUser: displayName missing\n\ncheck: expected HTTP 200 from the running app\n\nTests may be green. The feature isn't.\nFix the underlying issue — do not touch the check or\n.paranoid.json — then finish. Paranoid will re-run it.\n──────────────────────────────────────────────\n"
+2026-08-02T13:41:59.035Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:41:59.036Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde21ugEVbuFk7ij4rwT7;
+2026-08-02T13:41:59.036Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:59.036Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:59.037Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:41:59.038Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:41:59.038Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=499b22b5-baf4-423a-bea6-f1ebf98deb1c source=sdk
+2026-08-02T13:42:00.560Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:42:00.560Z [DEBUG] [API:timing] first byte after 1523ms
+2026-08-02T13:42:29.514Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:42:29.514Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.32676.c354a9b08da2
+2026-08-02T13:42:29.516Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:42:29.530Z [DEBUG] Temp file written successfully, size: 74481 bytes
+2026-08-02T13:42:29.530Z [DEBUG] Renaming <home>\.claude.json.tmp.32676.c354a9b08da2 to <home>\.claude.json
+2026-08-02T13:42:29.531Z [DEBUG] File <home>\.claude.json written atomically
+2026-08-02T13:42:31.141Z [DEBUG] [skills] idle — switching poll interval to 30000ms
+2026-08-02T13:43:09.902Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:10.330Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:10.335Z [INFO] [Stall] tool_dispatch_start tool=Edit toolUseId=toolu_01AfCsRveBPtxZfyEqEg89VR permissionDecisionMs=3
+2026-08-02T13:43:10.340Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:43:10.340Z [DEBUG] Writing to temp file: <live-demo>\lib\format-user.mjs.tmp.32676.0663c475ec16
+2026-08-02T13:43:10.341Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:43:10.342Z [DEBUG] Temp file written successfully, size: 240 bytes
+2026-08-02T13:43:10.343Z [DEBUG] Renaming <live-demo>\lib\format-user.mjs.tmp.32676.0663c475ec16 to <live-demo>\lib\format-user.mjs
+2026-08-02T13:43:10.343Z [DEBUG] File <live-demo>\lib\format-user.mjs written atomically
+2026-08-02T13:43:10.344Z [INFO] [Stall] tool_dispatch_end tool=Edit toolUseId=toolu_01AfCsRveBPtxZfyEqEg89VR outcome=ok durationMs=9
+2026-08-02T13:43:13.179Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:13.565Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:13.570Z [INFO] [Stall] tool_dispatch_start tool=Edit toolUseId=toolu_013DogrUgbGR8XVx2b85rRze permissionDecisionMs=4
+2026-08-02T13:43:13.574Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:43:13.574Z [DEBUG] Writing to temp file: <live-demo>\tests\user.test.mjs.tmp.32676.65169ff3399b
+2026-08-02T13:43:13.575Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:43:13.577Z [DEBUG] Temp file written successfully, size: 376 bytes
+2026-08-02T13:43:13.577Z [DEBUG] Renaming <live-demo>\tests\user.test.mjs.tmp.32676.65169ff3399b to <live-demo>\tests\user.test.mjs
+2026-08-02T13:43:13.578Z [DEBUG] File <live-demo>\tests\user.test.mjs written atomically
+2026-08-02T13:43:13.578Z [INFO] [Stall] tool_dispatch_end tool=Edit toolUseId=toolu_013DogrUgbGR8XVx2b85rRze outcome=ok durationMs=8
+2026-08-02T13:43:13.585Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:43:13.585Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:43:13.585Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:43:13.585Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:43:13.589Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:43:13.591Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde22fN3SXmqJvT9ywtWk;
+2026-08-02T13:43:13.591Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:13.591Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:13.592Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:13.593Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:43:13.594Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=7b9100d6-7898-4a2d-b3e3-945208be1242 source=sdk
+2026-08-02T13:43:15.858Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:43:15.858Z [DEBUG] [API:timing] first byte after 2266ms
+2026-08-02T13:43:16.958Z [INFO] [Stall] tool_dispatch_start tool=PowerShell toolUseId=toolu_01HNsrR6S43KM7MD8H7XwgoW permissionDecisionMs=492
+2026-08-02T13:43:19.781Z [INFO] [Stall] tool_dispatch_end tool=PowerShell toolUseId=toolu_01HNsrR6S43KM7MD8H7XwgoW outcome=ok durationMs=2823
+2026-08-02T13:43:19.786Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:43:19.786Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:43:19.786Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:43:19.786Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:43:19.791Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:43:19.792Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde28A6pSDhWNEPXMuk7q;
+2026-08-02T13:43:19.792Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:19.792Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:19.793Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:19.794Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:43:19.794Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=dcda8293-e4d2-4588-9ae9-b28b4f1966d0 source=sdk
+2026-08-02T13:43:21.027Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:43:21.028Z [DEBUG] [API:timing] first byte after 1234ms
+2026-08-02T13:43:30.700Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:30.700Z [DEBUG] "Hook Stop (Stop) success:\n\nPARANOID\n──────────────────────────────────────────────\nReal app check   ✓ passed (1.2s)\n  node scripts/check-live-app.mjs\n\nTests passed. The feature actually ran.\n──────────────────────────────────────────────\n"
+2026-08-02T13:43:30.703Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:30.707Z [DEBUG] MCP server "claude.ai Vercel": CLAUDEAI-PROXY connection closed after 129s (cleanly)
+2026-08-02T13:43:30.708Z [DEBUG] MCP server "claude.ai Vercel": Cleared connection cache for reconnection
+2026-08-02T13:43:30.708Z [DEBUG] MCP server "claude.ai Higgsfield": CLAUDEAI-PROXY connection closed after 127s (cleanly)
+2026-08-02T13:43:30.708Z [DEBUG] MCP server "claude.ai Higgsfield": Cleared connection cache for reconnection
+2026-08-02T13:43:30.708Z [DEBUG] MCP server "claude.ai Figma": CLAUDEAI-PROXY connection closed after 127s (cleanly)
+2026-08-02T13:43:30.708Z [DEBUG] MCP server "claude.ai Figma": Cleared connection cache for reconnection
+2026-08-02T13:43:30.708Z [DEBUG] MCP server "claude.ai Google Drive": CLAUDEAI-PROXY connection closed after 129s (cleanly)
+2026-08-02T13:43:30.709Z [DEBUG] MCP server "claude.ai Google Drive": Cleared connection cache for reconnection
+2026-08-02T13:43:30.709Z [DEBUG] MCP server "claude.ai Gmail": CLAUDEAI-PROXY connection closed after 129s (cleanly)
+2026-08-02T13:43:30.709Z [DEBUG] MCP server "claude.ai Gmail": Cleared connection cache for reconnection
+2026-08-02T13:43:30.712Z [DEBUG] LSP server manager shut down successfully
+2026-08-02T13:43:31.007Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:43:31.008Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.32676.5e292bbe0623
+2026-08-02T13:43:31.009Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:43:31.010Z [DEBUG] Temp file written successfully, size: 74481 bytes
+2026-08-02T13:43:31.011Z [DEBUG] Renaming <home>\.claude.json.tmp.32676.5e292bbe0623 to <home>\.claude.json
+2026-08-02T13:43:31.012Z [DEBUG] File <home>\.claude.json written atomically
+2026-08-02T13:43:31.895Z [DEBUG] All plugins already exist, skipping migration
+2026-08-02T13:43:31.904Z [DEBUG] Initialized versioned plugins system with 1 plugins
+2026-08-02T13:43:31.905Z [DEBUG] Cleared CA certificates cache
+2026-08-02T13:43:31.905Z [DEBUG] Cleared mTLS configuration cache
+2026-08-02T13:43:31.905Z [DEBUG] Cleared proxy agent cache
+2026-08-02T13:43:31.905Z [DEBUG] CA certs: stores=bundled,system, extraCertsPath=undefined
+2026-08-02T13:43:31.905Z [DEBUG] CA certs: Loaded 120 bundled root certificates
+2026-08-02T13:43:31.909Z [DEBUG] CA certs: Dropped 10 expired certificate(s) from system store
+2026-08-02T13:43:31.909Z [DEBUG] CA certs: Loaded 92 system CA certificates
+2026-08-02T13:43:31.910Z [DEBUG] mTLS: Creating HTTPS agent with custom certificates
+2026-08-02T13:43:31.915Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:31.915Z [DEBUG] [MCP] --mcp-config servers running fully async (nonblocking)
+2026-08-02T13:43:31.915Z [DEBUG] [MCP] claude.ai connectors running fully async (nonblocking)
+2026-08-02T13:43:31.916Z [DEBUG] [Perfetto] initializePerfettoTracing called, env value: undefined
+2026-08-02T13:43:31.916Z [DEBUG] [3P telemetry] isTelemetryEnabled=false (CLAUDE_CODE_ENABLE_TELEMETRY=undefined)
+2026-08-02T13:43:32.078Z [DEBUG] Grove: Using fresh cached config
+2026-08-02T13:43:32.087Z [DEBUG] Total LSP servers loaded: 0
+2026-08-02T13:43:32.087Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2026-08-02T13:43:32.087Z [DEBUG] LSP manager initialized with 0 servers
+2026-08-02T13:43:32.087Z [DEBUG] LSP server manager initialized successfully
+2026-08-02T13:43:32.087Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2026-08-02T13:43:32.089Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\skills: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\skills'
+2026-08-02T13:43:32.192Z [WARN] [3P telemetry] Event dropped (no event logger initialized): plugin_loaded
+2026-08-02T13:43:32.196Z [DEBUG] [auto-mode] verifyAutoModeGateAccess: enabledState=enabled disabledBySettings=false model=claude-fable-5 modelSupported=true disableFastModeBreakerFires=false carouselAvailable=true canEnterAuto=true
+2026-08-02T13:43:32.203Z [DEBUG] Watching for changes in skill/command directories: <home>\.claude\skills...
+2026-08-02T13:43:32.236Z [DEBUG] Watching for changes in setting files <home>\.claude\settings.json, <live-demo>\.claude\settings.json, <live-demo>\.claude\settings.local.json...
+2026-08-02T13:43:32.288Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:43:32.288Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.30860.e6f4fb8ec42d
+2026-08-02T13:43:32.309Z [DEBUG] Ripgrep first use test: PASSED (mode=embedded, path=<home>\.local\bin\claude.exe)
+2026-08-02T13:43:32.320Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:43:32.325Z [DEBUG] Temp file written successfully, size: 74481 bytes
+2026-08-02T13:43:32.325Z [DEBUG] Renaming <home>\.claude.json.tmp.30860.e6f4fb8ec42d to <home>\.claude.json
+2026-08-02T13:43:32.352Z [DEBUG] File <home>\.claude.json written atomically
+2026-08-02T13:43:32.391Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\.codex-marketplace\instagram-skills\skills\ig-audience-insights\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:32.392Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-audience-insights\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:32.392Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-profile-optimizer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:32.393Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-repurposer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:32.393Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\.codex-marketplace\instagram-skills\skills\ig-repurposer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:32.393Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\.codex-marketplace\instagram-skills\skills\ig-profile-optimizer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:32.705Z [DEBUG] [claudeai-mcp] Fetched 7 servers
+2026-08-02T13:43:32.709Z [DEBUG] mcp runtime arm: v1 (source: default)
+2026-08-02T13:43:32.736Z [DEBUG] MCP server "claude.ai Vercel": Initializing claude.ai proxy transport for server mcpsrv_01Qz41eT7zjvuDZkPBFZZCj7
+2026-08-02T13:43:32.737Z [DEBUG] MCP server "claude.ai Vercel": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01Qz41eT7zjvuDZkPBFZZCj7
+2026-08-02T13:43:32.737Z [DEBUG] MCP server "claude.ai Vercel": claude.ai proxy transport created successfully
+2026-08-02T13:43:32.739Z [DEBUG] MCP server "claude.ai Vercel": Starting connection with timeout of 30000ms
+2026-08-02T13:43:32.742Z [DEBUG] MCP server "claude.ai Vercel": Stateless claudeai-proxy — resolving MCP initialize from cached projection
+2026-08-02T13:43:32.743Z [DEBUG] MCP server "claude.ai Higgsfield": Initializing claude.ai proxy transport for server mcpsrv_01NyvKeBSw7eB1VG1AGKkV8Y
+2026-08-02T13:43:32.743Z [DEBUG] MCP server "claude.ai Higgsfield": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01NyvKeBSw7eB1VG1AGKkV8Y
+2026-08-02T13:43:32.743Z [DEBUG] MCP server "claude.ai Higgsfield": claude.ai proxy transport created successfully
+2026-08-02T13:43:32.745Z [DEBUG] MCP server "claude.ai Higgsfield": Starting connection with timeout of 30000ms
+2026-08-02T13:43:32.746Z [DEBUG] MCP server "claude.ai Figma": Initializing claude.ai proxy transport for server mcpsrv_01QXz1zqEMCygQ5kaMLsyMdt
+2026-08-02T13:43:32.746Z [DEBUG] MCP server "claude.ai Figma": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01QXz1zqEMCygQ5kaMLsyMdt
+2026-08-02T13:43:32.746Z [DEBUG] MCP server "claude.ai Figma": claude.ai proxy transport created successfully
+2026-08-02T13:43:32.748Z [DEBUG] MCP server "claude.ai Figma": Starting connection with timeout of 30000ms
+2026-08-02T13:43:32.748Z [DEBUG] MCP server "claude.ai Google Drive": Initializing claude.ai proxy transport for server mcpsrv_016Y1sJzAt7cXuKfPAvxpFjm
+2026-08-02T13:43:32.748Z [DEBUG] MCP server "claude.ai Google Drive": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_016Y1sJzAt7cXuKfPAvxpFjm
+2026-08-02T13:43:32.748Z [DEBUG] MCP server "claude.ai Google Drive": claude.ai proxy transport created successfully
+2026-08-02T13:43:32.751Z [DEBUG] MCP server "claude.ai Google Drive": Starting connection with timeout of 30000ms
+2026-08-02T13:43:32.751Z [DEBUG] MCP server "claude.ai Google Drive": Stateless claudeai-proxy — resolving MCP initialize from cached projection
+2026-08-02T13:43:32.752Z [DEBUG] MCP server "claude.ai Gmail": Initializing claude.ai proxy transport for server mcpsrv_01J8rB2dM7nnstdu869eoybc
+2026-08-02T13:43:32.752Z [DEBUG] MCP server "claude.ai Gmail": Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_01J8rB2dM7nnstdu869eoybc
+2026-08-02T13:43:32.752Z [DEBUG] MCP server "claude.ai Gmail": claude.ai proxy transport created successfully
+2026-08-02T13:43:32.753Z [DEBUG] MCP server "claude.ai Gmail": Starting connection with timeout of 30000ms
+2026-08-02T13:43:32.753Z [DEBUG] MCP server "claude.ai Gmail": Stateless claudeai-proxy — resolving MCP initialize from cached projection
+2026-08-02T13:43:32.756Z [DEBUG] MCP server "claude.ai Vercel": Successfully connected (transport: claudeai-proxy) in 20ms
+2026-08-02T13:43:32.756Z [DEBUG] MCP server "claude.ai Vercel": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"Vercel MCP Server","title":"Vercel MCP Server","icons":[{"src":"https://mcp.vercel.com/icons/vercel-light.svg","mimeType":"image/svg+xml","sizes":["any"],"theme":"light"},{"src":"https://mcp.vercel.com/icons/vercel-dark.svg","mimeType":"image/svg+xml","sizes":["any"],"theme":"dark"}],"version":"0.1.0","websiteUrl":"https://vercel.com","description":"Vercel's official MCP server — Vercel platform tools, deployment management, and documentation for AI assistants."}}
+2026-08-02T13:43:32.756Z [DEBUG] [MCP] Server "claude.ai Vercel" connected with subscribe=false
+2026-08-02T13:43:32.759Z [DEBUG] MCP server "claude.ai Google Drive": Successfully connected (transport: claudeai-proxy) in 11ms
+2026-08-02T13:43:32.759Z [DEBUG] MCP server "claude.ai Google Drive": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"StatelessServer","version":"ESF"}}
+2026-08-02T13:43:32.759Z [DEBUG] [MCP] Server "claude.ai Google Drive" connected with subscribe=false
+2026-08-02T13:43:32.760Z [DEBUG] MCP server "claude.ai Gmail": Successfully connected (transport: claudeai-proxy) in 8ms
+2026-08-02T13:43:32.760Z [DEBUG] MCP server "claude.ai Gmail": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":false,"hasResourceSubscribe":false,"serverVersion":{"name":"StatelessServer","version":"ESF"}}
+2026-08-02T13:43:32.760Z [DEBUG] [MCP] Server "claude.ai Gmail" connected with subscribe=false
+2026-08-02T13:43:32.766Z [DEBUG] Org fast mode: disabled (extra_usage_disabled)
+2026-08-02T13:43:32.769Z [DEBUG] LSP Diagnostics: Resetting all state (0 pending, 0 files tracked)
+2026-08-02T13:43:32.774Z [DEBUG] [Bootstrap] Fetch ok
+2026-08-02T13:43:32.775Z [DEBUG] [Bootstrap] Cache unchanged, skipping write
+2026-08-02T13:43:33.325Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:33.339Z [DEBUG] [Bootstrap] Fetching
+2026-08-02T13:43:33.356Z [DEBUG] [ScheduledTasks] scheduler start() — enabled=false, hasTasks=false
+2026-08-02T13:43:33.370Z [DEBUG] Loading skills from: managed=C:\Program Files\ClaudeCode\.claude\skills, user=<home>\.claude\skills, project=[]
+2026-08-02T13:43:33.371Z [DEBUG] getPluginSkills: Processing 2 enabled plugins
+2026-08-02T13:43:33.371Z [DEBUG] Checking plugin paranoid: skillsPath=exists, skillsPaths=0 paths
+2026-08-02T13:43:33.371Z [DEBUG] Attempting to load skills from plugin paranoid default skillsPath: <repo>\skills
+2026-08-02T13:43:33.371Z [DEBUG] Checking plugin instagram-skills: skillsPath=exists, skillsPaths=0 paths
+2026-08-02T13:43:33.371Z [DEBUG] Attempting to load skills from plugin instagram-skills default skillsPath: <home>\.claude\skills\instagram-marketing\skills
+2026-08-02T13:43:33.372Z [DEBUG] Total plugin workflows loaded: 0
+2026-08-02T13:43:33.384Z [DEBUG] Total plugin commands loaded: 0
+2026-08-02T13:43:33.388Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\commands: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\commands'
+2026-08-02T13:43:33.388Z [DEBUG] Failed to stat directory <home>\.claude\commands: ENOENT: no such file or directory, stat '<home>\.claude\commands'
+2026-08-02T13:43:33.390Z [DEBUG] Failed to stat directory C:\Program Files\ClaudeCode\.claude\output-styles: ENOENT: no such file or directory, stat 'C:\Program Files\ClaudeCode\.claude\output-styles'
+2026-08-02T13:43:33.390Z [DEBUG] Failed to stat directory <home>\.claude\output-styles: ENOENT: no such file or directory, stat '<home>\.claude\output-styles'
+2026-08-02T13:43:33.393Z [DEBUG] Total plugin output styles loaded: 0
+2026-08-02T13:43:33.395Z [DEBUG] installPluginsForHeadless: starting
+2026-08-02T13:43:33.402Z [DEBUG] Lock acquisition took longer than expected - another Claude instance may be running
+2026-08-02T13:43:33.405Z [DEBUG] Loaded 1 skills from plugin paranoid default directory
+2026-08-02T13:43:33.405Z [DEBUG] Loaded 17 unique skills (17 unconditional, 0 conditional, managed: 0, user: 17, project: 0, additional: 0, legacy commands: 0)
+2026-08-02T13:43:33.409Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-repurposer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:33.417Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-profile-optimizer\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:33.422Z [WARN] Failed to parse YAML frontmatter in <home>\.claude\skills\instagram-marketing\skills\ig-audience-insights\SKILL.md: YAML Parse error: Unexpected token
+2026-08-02T13:43:33.424Z [DEBUG] Loaded 9 skills from plugin instagram-skills default directory
+2026-08-02T13:43:33.429Z [DEBUG] Total plugin skills loaded: 10 (0 duplicate/user-owned entries skipped)
+2026-08-02T13:43:33.430Z [DEBUG] getSkills returning: 17 skill dir commands, 10 plugin skills, 35 bundled skills, 0 builtin plugin skills
+2026-08-02T13:43:33.440Z [DEBUG] act_dont_rederive_arm_active source=growthbook
+2026-08-02T13:43:33.484Z [DEBUG] [mcp-registry] Loaded 294 official MCP URLs (legacy)
+2026-08-02T13:43:33.497Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:43:33.497Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:43:33.497Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:43:33.497Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:43:33.642Z [DEBUG] MCP server "claude.ai Higgsfield": Successfully connected (transport: claudeai-proxy) in 899ms
+2026-08-02T13:43:33.642Z [DEBUG] MCP server "claude.ai Higgsfield": Server instructions truncated from 4478 to 2048 chars
+2026-08-02T13:43:33.642Z [DEBUG] MCP server "claude.ai Higgsfield": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Higgsfield AI","version":"1.0.0","description":"Higgsfield creative platform for image, video, and audio generation, marketing asset workflows, and Virality Predictor video analysis for attention, engagement, and audience response."}}
+2026-08-02T13:43:33.642Z [DEBUG] [MCP] Server "claude.ai Higgsfield" connected with subscribe=false
+2026-08-02T13:43:33.719Z [DEBUG] [Bootstrap] Fetch ok
+2026-08-02T13:43:33.720Z [DEBUG] [Bootstrap] Cache unchanged, skipping write
+2026-08-02T13:43:33.789Z [DEBUG] MCP server "claude.ai Figma": Successfully connected (transport: claudeai-proxy) in 1044ms
+2026-08-02T13:43:33.789Z [DEBUG] MCP server "claude.ai Figma": Server instructions truncated from 4986 to 2048 chars
+2026-08-02T13:43:33.789Z [DEBUG] MCP server "claude.ai Figma": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"hasResourceSubscribe":false,"serverVersion":{"name":"Figma MCP Server","icons":[{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"},{"src":"data:image/png;base64,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","mimeType":"image/png"}],"version":"1.0.0","websiteUrl":"https://developers.figma.com/docs/figma-mcp-server/"}}
+2026-08-02T13:43:33.790Z [DEBUG] [MCP] Server "claude.ai Figma" connected with subscribe=false
+2026-08-02T13:43:33.916Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:33.920Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:33.938Z [DEBUG] Dynamic tool loading: 0/76 deferred tools included
+2026-08-02T13:43:33.941Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde28cS6Wjo9yeZTGVC8i;
+2026-08-02T13:43:33.941Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:33.944Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:33.947Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:33.947Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:43:33.949Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=c9f04b25-7e0e-4889-a3e1-9fb8b31c8bc2 source=sdk
+2026-08-02T13:43:34.445Z [DEBUG] MCP server "claude.ai Higgsfield": Normalized input schema for tool "video_analysis_create" (flattened top-level oneOf)
+2026-08-02T13:43:37.252Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:43:37.252Z [DEBUG] [API:timing] first byte after 3305ms
+2026-08-02T13:43:41.438Z [INFO] [Stall] tool_dispatch_start tool=PowerShell toolUseId=toolu_018kKyBkWrLBb2wCSTnCDHmR permissionDecisionMs=509
+2026-08-02T13:43:41.856Z [INFO] [Stall] tool_dispatch_end tool=PowerShell toolUseId=toolu_018kKyBkWrLBb2wCSTnCDHmR outcome=ok durationMs=418
+2026-08-02T13:43:41.865Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:43:41.865Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:43:41.865Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:43:41.866Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:43:41.910Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:43:41.918Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde29gm5GCFhjfJSj6mVw;
+2026-08-02T13:43:41.918Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:41.918Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:41.920Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:41.921Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:43:41.922Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=9e75747c-cc5a-433f-a169-93d54eabef74 source=sdk
+2026-08-02T13:43:43.550Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:43:43.550Z [DEBUG] [API:timing] first byte after 1631ms
+2026-08-02T13:43:44.400Z [INFO] [Stall] tool_dispatch_start tool=PowerShell toolUseId=toolu_011dmGrqWoAHR82LDti5tp7B permissionDecisionMs=611
+2026-08-02T13:43:47.350Z [INFO] [Stall] tool_dispatch_end tool=PowerShell toolUseId=toolu_011dmGrqWoAHR82LDti5tp7B outcome=ok durationMs=2950
+2026-08-02T13:43:47.358Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2026-08-02T13:43:47.358Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2026-08-02T13:43:47.358Z [DEBUG] Hooks: Found 0 total hooks in registry
+2026-08-02T13:43:47.358Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2026-08-02T13:43:47.362Z [DEBUG] Dynamic tool loading: 0/191 deferred tools included
+2026-08-02T13:43:47.364Z [DEBUG] attribution header x-anthropic-billing-header: cc_version=2.1.220.72a; cc_entrypoint=sdk-cli; cch=00000; cc_prev_req=req_011Cde2AFM9Mch1PD8XtKpJX;
+2026-08-02T13:43:47.364Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:47.364Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:47.365Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:47.368Z [DEBUG] [API:timing] dispatching to firstParty model=claude-fable-5
+2026-08-02T13:43:47.370Z [DEBUG] [API REQUEST] /v1/messages x-client-request-id=9ddc544e-524b-41f1-af2e-22de0d93c3a7 source=sdk
+2026-08-02T13:43:52.523Z [DEBUG] Stream started - received first chunk
+2026-08-02T13:43:52.523Z [DEBUG] [API:timing] first byte after 5158ms
+2026-08-02T13:43:53.900Z [DEBUG] Hook output does not start with {, treating as plain text
+2026-08-02T13:43:53.900Z [DEBUG] "Hook Stop (Stop) success:\n\nPARANOID\n──────────────────────────────────────────────\nReal app check   ✓ passed (1.3s)\n  node scripts/check-live-app.mjs\n\nTests passed. The feature actually ran.\n──────────────────────────────────────────────\n"
+2026-08-02T13:43:53.904Z [DEBUG] Fast mode unavailable: Fast mode is not available in the Agent SDK
+2026-08-02T13:43:53.906Z [DEBUG] MCP server "claude.ai Vercel": CLAUDEAI-PROXY connection closed after 21s (cleanly)
+2026-08-02T13:43:53.906Z [DEBUG] MCP server "claude.ai Vercel": Cleared connection cache for reconnection
+2026-08-02T13:43:53.906Z [DEBUG] MCP server "claude.ai Higgsfield": CLAUDEAI-PROXY connection closed after 20s (cleanly)
+2026-08-02T13:43:53.906Z [DEBUG] MCP server "claude.ai Higgsfield": Cleared connection cache for reconnection
+2026-08-02T13:43:53.906Z [DEBUG] MCP server "claude.ai Figma": CLAUDEAI-PROXY connection closed after 20s (cleanly)
+2026-08-02T13:43:53.907Z [DEBUG] MCP server "claude.ai Figma": Cleared connection cache for reconnection
+2026-08-02T13:43:53.907Z [DEBUG] MCP server "claude.ai Google Drive": CLAUDEAI-PROXY connection closed after 21s (cleanly)
+2026-08-02T13:43:53.907Z [DEBUG] MCP server "claude.ai Google Drive": Cleared connection cache for reconnection
+2026-08-02T13:43:53.907Z [DEBUG] MCP server "claude.ai Gmail": CLAUDEAI-PROXY connection closed after 21s (cleanly)
+2026-08-02T13:43:53.907Z [DEBUG] MCP server "claude.ai Gmail": Cleared connection cache for reconnection
+2026-08-02T13:43:53.910Z [DEBUG] LSP server manager shut down successfully
+2026-08-02T13:43:54.188Z [DEBUG] Preserving file permissions: 100666
+2026-08-02T13:43:54.189Z [DEBUG] Writing to temp file: <home>\.claude.json.tmp.30860.4c952f922dbb
+2026-08-02T13:43:54.189Z [DEBUG] Applied original permissions to temp file
+2026-08-02T13:43:54.204Z [DEBUG] Temp file written successfully, size: 74481 bytes
+2026-08-02T13:43:54.204Z [DEBUG] Renaming <home>\.claude.json.tmp.30860.4c952f922dbb to <home>\.claude.json
+2026-08-02T13:43:54.205Z [DEBUG] File <home>\.claude.json written atomically

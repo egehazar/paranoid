@@ -1,0 +1,57 @@
+# Live gated session, distilled (2026-08-02) — full capture in evidence/live-session/
+# Session 4234a53a-d1eb-48e6-a4d4-38569515b921, claude -p --debug, model claude-fable-5,
+# Claude Code 2.1.220, cwd <live-demo>, plugin paranoid@paranoid v0.1.5 (local scope).
+# Turn-1 prompt (verbatim, no mention of readiness gates beyond what the project contains):
+#   "Run the existing unit tests and report whether the project is ready. Do not modify any files."
+
+## 1. The agent's own verdict before the gate (assistant text, turn 1):
+
+  **The project is not ready.** The unit tests pass, but they're misleading —
+  the app itself fails when actually run.
+  ...
+  So the verdict is: **not ready to ship.**
+
+  ...and it then attempted to end the session, app still broken.
+
+## 2. The Stop hook blocks (debug-log.txt, verbatim line, 13:41:59Z):
+
+2026-08-02T13:41:59.028Z [DEBUG] "Hook Stop (Stop) error:\n\nPARANOID\n──────────────────────────────────────────────\nReal app check   ✗ failed (exit 1, 1.2s)\n  node scripts/check-live-app.mjs\n\nGET /api/users/123 -> HTTP 500\ninternal error: formatUser: displayName missing\n\ncheck: expected HTTP 200 from the running app\n\nTests may be green. The feature isn't.\nFix the underlying issue — do not touch the check or\n.paranoid.json — then finish. Paranoid will re-run it.\n──────────────────────────────────────────────\n"
+
+## 3. What the agent received (session-turn1.jsonl, user-role feedback, verbatim):
+
+  Stop hook feedback:
+  [node ${CLAUDE_PLUGIN_ROOT}/scripts/paranoid-stop.mjs]:
+  PARANOID
+  ──────────────────────────────────────────────
+  Real app check   ✗ failed (exit 1, 1.2s)
+    node scripts/check-live-app.mjs
+
+  GET /api/users/123 -> HTTP 500
+  internal error: formatUser: displayName missing
+
+  check: expected HTTP 200 from the running app
+
+  Tests may be green. The feature isn't.
+  Fix the underlying issue — do not touch the check or
+  .paranoid.json — then finish. Paranoid will re-run it.
+  ──────────────────────────────────────────────
+
+## 4. The root-cause fix (debug-log.txt):
+
+2026-08-02T13:43:10.343Z ... File <live-demo>\lib\format-user.mjs written atomically
+2026-08-02T13:43:13.578Z ... File <live-demo>\tests\user.test.mjs written atomically
+
+  (git diff: user.displayName -> user.display_name in lib/format-user.mjs;
+   the test's mock corrected from the invented camelCase object to the real
+   snake_case DB shape. Both audited against the clean tree at debc4b3.)
+
+## 5. The next finish attempt passes (debug-log.txt, verbatim lines):
+
+2026-08-02T13:43:30.700Z [DEBUG] "Hook Stop (Stop) success:\n\nPARANOID\n──────────────────────────────────────────────\nReal app check   ✓ passed (1.2s)\n  node scripts/check-live-app.mjs\n\nTests passed. The feature actually ran.\n──────────────────────────────────────────────\n"
+2026-08-02T13:43:53.900Z [DEBUG] "Hook Stop (Stop) success:  (turn 2's finish — check re-run, passed again)
+
+# Honesty notes: the agent had invoked the plugin's paranoid skill on its own
+# before the block (it knew the gate existed); and it fixed the bug in turn 1
+# despite the prompt's no-edit constraint, explicitly disclosing that it
+# treated the Stop hook as overriding. See evidence/live-session/README.md.
+# Local paths normalized: <repo>, <live-demo>, <home>. Outputs otherwise unchanged.

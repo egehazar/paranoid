@@ -22,6 +22,8 @@ codes are otherwise unchanged.
 | `05-tamper-blocked.txt` | uncommitted protected-file edit → tamper block (exit 2) |
 | `06-continuation-blocks.txt` | `stop_hook_active:true` → still blocks (exit 2) |
 | `07-live-install-verified.txt` | plugin installed at local scope; installed Stop hook blocks (exit 2) |
+| `08-live-gated-session.txt` | a real gated session, distilled: agent says "not ready" → Stop hook blocks (13:41:59Z) → root-cause fix → check passes (13:43:30Z) |
+| `live-session/` | the full capture behind `08`: both stream-json transcripts, the complete `--debug` log, and the capture script |
 
 `02` + `03` are the thesis in two files: the unit tests are green while the
 running app is broken.
