@@ -225,18 +225,15 @@ at the moment the agent says it is done:
 
 > **The tests passed. Did the feature actually run?**
 
-## Provenance
+## Evidence & CI
 
-Paranoid was designed and written by Claude in a chat session, hardened across
-four adversarial audit rounds between two AI models, then executed and natively
-validated (`claude plugin validate . --strict`) via Claude Code. The commit
-history reflects exactly that: an imported audited `v0.1.4`, a native-validation
-fix (`v0.1.5`), and reproducible command captures under `evidence/`. Those
-capture files are first-party (committed by the repo owner) — they are
-reproducible receipts with exit codes, not an independent audit. The independent
-check is CI: GitHub Actions re-runs the full test suite on every push (`test`
-badge above), and a separate `demo-thesis` job re-proves the green-tests /
-broken-app thesis on GitHub's own runners.
+The capture files under `evidence/` are first-party (committed by the repo
+owner) — reproducible receipts with commands and exit codes, not an independent
+audit. The independent check is CI: GitHub Actions re-runs the full test suite
+on every push (`test` badge above), and a separate `demo-thesis` job re-proves
+the green-tests / broken-app thesis on GitHub's own runners. The hardening
+history — four adversarial audit rounds, each documented in `CHANGELOG.md` —
+is laid out as an inspectable table in [`docs/audit-log.md`](docs/audit-log.md).
 
 ## Development
 
