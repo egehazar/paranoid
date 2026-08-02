@@ -90,6 +90,9 @@ Full write-up, both **refuted** hypotheses, and every session row:
 [`docs/reality-gap.md`](docs/reality-gap.md) ·
 [`eval/results/results.jsonl`](eval/results/results.jsonl). The four pre-repo
 audit rounds are an inspectable table in [`docs/audit-log.md`](docs/audit-log.md).
+The story version — including a real gated session captured end-to-end
+([`evidence/live-session/`](evidence/live-session/)) — is published at
+[egehazar.com/writing/paranoid](https://egehazar.com/writing/paranoid).
 
 ## Install
 
