@@ -15,7 +15,7 @@
 **Tests passed. But does the feature actually run? Paranoid checks.**
 
 Your coding agent wrote the feature. It wrote the tests. Every test passed.
-Then you opened the app — and the feature was still broken.
+Then you opened the app - and the feature was still broken.
 
 Paranoid is a **Claude Code skill + hook** that runs a developer-owned check
 against the actual application before the agent can finish.
